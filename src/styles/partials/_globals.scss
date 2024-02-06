@@ -1,4 +1,6 @@
 @use "./variables" as *;
+@use "./mixins" as *; 
+@use "./typography" as *;
 
 *,
 *::before,
@@ -7,10 +9,8 @@
 }
 
 :root {
-  //   font-size: 16px;
-  //   color: black // fill in please
-  //   font-family: // fill in please with correct font family and deprecation
-  //   background-color: // fill in please
+    font-size: 16px;
+    font-family: 'Titillium Web'; 
 }
 
 body {
@@ -23,3 +23,67 @@ td {
   border: 0;
   border-collapse: collapse;
 }
+
+h1{ //Main Header
+  font-size: 1.75rem;
+  line-height: 2rem;
+  @include tablet{
+      font-size: 2rem;
+      line-height: 2.5rem;
+  }
+}
+
+h2{ //Subheader
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  @include tablet{
+      font-size: 1.5rem;
+      line-height: 2rem;
+  }
+}
+
+h3{ //Labels, Links & Buttons
+  font-size:0.8rem ;
+  line-height:1.25rem ;
+  @include tablet{
+      font-size: 0.88rem;
+      line-height: 1.38rem;
+  }
+}
+
+h4{ //Table header
+  font-size: 0.69rem;
+  line-height: 1rem;
+  @include tablet{
+      font-size: 0.75rem;
+      line-height: 1.12rem;
+  }
+}
+
+.p1{ //body Large
+  font-size: 0.94rem;
+  line-height: 1.62rem;
+  @include tablet {
+      font-size: 1rem;
+      line-height: 1.75rem;
+  }
+}
+
+.p2{ //body medium
+  font-size: 0.81rem;
+  line-height: 1.25rem;
+  @include tablet {
+      font-size: 0.88rem;
+      line-height: 1.38rem;
+  }
+}
+
+.p3{ //body small
+  font-size: 0.69rem;
+  line-height: 1rem;
+  @include tablet{
+      font-size: 0.75rem;
+      line-height: 1.12rem;
+  }
+}
+

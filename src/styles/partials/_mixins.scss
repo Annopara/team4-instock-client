@@ -1,7 +1,21 @@
-@mixin tablet {
-    // to be completed
-}
+@use './variables' as *; 
 
 @mixin desktop {
-    // to be completed
+    @media screen and (min-width: $desktop-breakpoint) { 
+        @content;
+        
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}; 
+
+
+@mixin phone {
+    @media screen and (min-width: $mobile-breakpoint) {
+        @content;
+    }
 }

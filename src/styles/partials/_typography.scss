@@ -1,7 +1,15 @@
-@font-face { // sample only - to be downloaded from Google Fonts in all the required weights etc.
-    font-family: 'Roboto';
-    font-style: normal;
+@font-face {
+   font-family: 'Titillium Web', Arial, Helvetica, sans-serif, sans-serif;
+   font-style: normal;
     font-weight: 400;
-    src: local('Roboto'), local('Roboto-Regular'), url('../fonts/roboto-v20-latin-regular.woff2') format('woff2');
+    src:  url('../../assets/fonts/TitilliumWeb-Regular.ttf') format('ttf');
     
 }
+
+@font-face {
+    font-family: 'Titillium Web' Arial, Helvetica, sans-serif, sans-serif;
+    font-style: normal;
+     font-weight: 600;
+     src:  url('../../assets/fonts/TitilliumWeb-SemiBold.ttf') format('ttf');
+     
+ }
