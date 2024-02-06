@@ -1,15 +1,20 @@
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { WarehousesPage } from "./pages/WarehousesPage/WarehousesPage";
+import { Header } from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
+
+import { AllWarehousesPage } from "./pages/AllWarehousesPage/AllWarehousesPage";
 import { AddWarehousePage } from "./pages/AddWarehousePage/AddWarehousePage";
 import { WarehousePage } from "./pages/WarehousePage/WarehousePage";
 import { UpdateWarehousePage } from "./pages/UpdateWarehousePage/UpdateWarehousePage";
 
-import { InventoryPage } from "./pages/InventoryPage/InventoryPage";
-import { AddInventoryPage } from "./pages/AddInventoryPage/AddInventoryPage";
+import { AllInventoryPage } from "./pages/AllInventoryPage/AllInventoryPage";
+import { AddInventoryItemPage } from "./pages/AddInventoryItemPage/AddInventoryItemPage";
 import { InventoryItemPage } from "./pages/InventoryItemPage/InventoryItemPage";
 import { UpdateInventoryItemPage } from "./pages/UpdateInventoryItemPage/UpdateInventoryItemPage";
+
+import { Error404Page } from "./pages/Error404Page/Error404Page";
 
 function App() {
   return (
@@ -17,7 +22,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/warehouses" element={<WarehousesPage />} />
+          <Route path="/warehouses" element={<AllWarehousesPage />} />
           <Route
             path="/warehouses/addWarehouse"
             element={<AddWarehousePage />}
@@ -28,10 +33,10 @@ function App() {
             element={<UpdateWarehousePage />}
           />
 
-          <Route path="/inventory" element={<InventoryPage />} />
+          <Route path="/inventory" element={<AllInventoryPage />} />
           <Route
             path="/inventory/addInventory"
-            element={<AddInventoryPage />}
+            element={<AddInventoryItemPage />}
           />
           <Route
             path="/inventory/:inventoryItemID"
