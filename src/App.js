@@ -1,5 +1,17 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+// import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+// import WarehousesPage from './pages/WarehousesPage';
+// import AddWarehousePage from './pages/AddWarehousePage';
+// import WarehousePage from './pages/WarehousePage';
+// import UpdateWarehousePage from './pages/UpdateWarehousePage';
+// import InventoryPage from './pages/InventoryPage';
+// import AddInventoryPage from './pages/AddInventoryPage';
+// import InventoryItemPage from './pages/InventoryItemPage';
+// import UpdateInventoryItemPage from './pages/UpdateInventoryItemPage';
+// import Error404Page from './pages/Error404Page';
+
 
 function App() {
   return (

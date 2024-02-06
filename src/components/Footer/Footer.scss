@@ -1,3 +1,28 @@
 @import "../../styles/variables.scss";
 @import "../../styles/partials/_globals.scss";
 @import "../../styles/partials/_typography.scss";
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:colors.$background-light-grey;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+    &__text {
+      font-size: 0.68rem;
+      color: colors.$secondary-slate;
+      margin: 2.5rem 0;
+      line-height: 1rem;
+    
+      @include desktop {
+        margin: 3rem 0;
+      }
+      @include tablet {
+        line-height: 1.1rem;
+        font-size: 0.75rem;
+      }     
+    }
+    }
