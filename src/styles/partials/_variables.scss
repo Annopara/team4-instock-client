@@ -1,2 +1,21 @@
-$tablet-breakpoint: 48rem; // sample only - to be replaced with the actual breakpoints
-$desktop-breakpoint: 64rem; // sample only - to be replaced with the actual breakpoints
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+$mobile-breakpoint: 480px;
+
+//Primary Colours
+$instock-Black: #13182C; 
+$instock-Indigo: #2E66E5; 
+$white: #FFFFFF;
+
+//Secondary Colours
+$slate:#5C667E ;
+$cloud: #BDC5D5; 
+
+//Background Colours
+$graphite: #232940; 
+$light-grey: #f7f8f9; 
+
+//supporting colors
+$green: #158463; 
+$red: #c94515; 
+
