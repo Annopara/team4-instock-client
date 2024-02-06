@@ -1,0 +1,17 @@
+// <div className="search">
+// <h1 className="search__pageTitle">{pageTitle}</h1>
+// <div className="search__container">
+//   <input className="search__input" type="text" placeholder="Search..." />
+//   <button onClick={() => navigate(navToTitle)} className="search__button">{btnText}</button>
+// </div>
+
+// </div>
+// )
+
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
