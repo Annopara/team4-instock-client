@@ -16,6 +16,7 @@ import { UpdateInventoryItemPage } from "./pages/UpdateInventoryItemPage/UpdateI
 
 import { Error404Page } from "./pages/Error404Page/Error404Page";
 
+
 function App() {
   return (
     <div className="App">

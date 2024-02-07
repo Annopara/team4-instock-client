@@ -3,13 +3,16 @@
 @use "../../styles/partials/typography.scss" as *;
 @use "../../styles/partials/globals.scss" as *;
 
-.list-header {
+.page-header {
   display: flex;
-  flex-direction: column;
-  text-align: left;
-  padding: 2rem 1rem;
-  border-bottom: 1px solid $cloud;
-  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
 
   @include tablet {
     flex-direction: row;
@@ -27,6 +30,10 @@
 
   &__title {
     font-size: 1.75rem;
+    font-weight: 600;
+    padding-top: 2rem;
+    line-height: 2.25rem;
+    text-transform: capitalize;
 
     @include tablet {
     }

@@ -1,3 +1,9 @@
+@use "./styles/partials/_variables.scss" as *;
+@use "./styles/partials/_mixins.scss" as *;
+@use "./styles/partials/_typography.scss" as *;
+@use "./styles/partials/_globals.scss" as *;
+
+
 .page-container {
   position: relative;
   top: -4rem;
@@ -5,16 +11,30 @@
   right: 0;
   margin: auto;
   width: calc(100% - 2rem);
-  background-color: #ffffff;
-  border-radius: 4px;
+  background-color: $white;
+  border-radius: 20px;
+
+  @include tablet {
+    top: -6rem;
+    width: calc(100% - 4rem);
+    max-width: 63.5rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px $cloud;
+  }
 }
 
-.page-container::before {
-content: "";
-position: absolute;
-z-index: -1;
-height: 100%;
-width: 100%;
-border-radius: 4px;
-box-shadow: 0 0 10px #BDC5D5;
+body {
+  font-family: "Titillium Web", "Courier New", monospace;
+  color: $instock-black;
+  background-color: $light-grey;
 }
+
+
