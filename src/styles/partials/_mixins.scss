@@ -1,4 +1,4 @@
-@use './variables' as *; 
+@use '../partials/variables' as *; 
 
 @mixin desktop {
     @media screen and (min-width: $desktop-breakpoint) { 
