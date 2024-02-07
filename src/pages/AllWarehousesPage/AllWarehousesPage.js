@@ -1,7 +1,19 @@
-import './AllWarehousesPage.scss';
-// remember to import as {} since it's not the default export
+import "./AllWarehousesPage.scss";
+import { WarehousesHeadings } from "../../components/WarehousesHeadings/WarehousesHeadings";
+import { SearchHeader } from "../../components/SearchHeader/SearchHeader";
+import { WarehouseList } from "../../components/WarehouseList/WarehouseList";
+
+
 export const AllWarehousesPage = () => {
   return (
-    <div>AllWarehousesPage</div>
-  )
-}
+    <section className="warehouses">
+      <SearchHeader
+        title="Warehouses"
+        btnText="+ Add New Warehouse"
+        navToTitle="AddWarehousePage"
+      />
+      <WarehousesHeadings />
+      <WarehouseList />
+    </section>
+  );
+};
