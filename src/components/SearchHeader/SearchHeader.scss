@@ -1,17 +1,102 @@
-// <div className="search">
-// <h1 className="search__pageTitle">{pageTitle}</h1>
-// <div className="search__container">
-//   <input className="search__input" type="text" placeholder="Search..." />
-//   <button onClick={() => navigate(navToTitle)} className="search__button">{btnText}</button>
-// </div>
+@use "../../styles/partials/_typography.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
 
-// </div>
-// )
+.list-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem;
+  padding-top: 2rem;
+  margin-left: 0;
+  border-bottom: 1px solid $cloud;
+  width: 100%;
 
-.search {
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    border: none;
+    margin-bottom: 1rem;
+  }
+
+  @include desktop {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    color: black;
+    margin-left: 1.5rem;
+    font-size: 1.5rem;
+    @include tablet {
+      margin-left: 0;
+    }
+  }
+
+  &__search {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    align-items: center;
+    background-image: url(../../assets/icons/search-24px.svg);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    width: 85%;
+    height: 2.5rem;
+    margin: 1rem 0;
+    margin-left: 1.5rem;
+    border: 1px $cloud solid;
+    border-radius: 20px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      height: 2.2rem;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      @include tablet {
+        width: 80%;
+        flex-direction: row;
+        margin-right: 1rem;
+      }
+    }
+
+    &-input {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      border: 1px solid $cloud;
+      border-radius: 5px;
+      font-size: 1rem;
+      @include tablet {
+        width: 50%;
+      }
+    }
+
+    &-button {
+      border: 1px solid $cloud;
+      border-radius: 20px;
+      font-size: 1rem;
+      background-color: $instock-Indigo;
+      color: $white;
+      cursor: pointer;
+      padding: 0.5rem;
+      height: 2.5rem;
+      margin-left: 1.5rem;
+
+      @include tablet {
+        width: 20%;
+        max-height: 2.2rem;
+        width: 12rem;
+        margin-right: 2rem;
+      }
+    }
+  }
 }
