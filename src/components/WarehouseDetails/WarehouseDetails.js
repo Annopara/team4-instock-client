@@ -1,4 +1,5 @@
 import React from 'react'
+//set up backend warehouse ID request
 
 const WarehouseDetails = () => {
   return (

@@ -1,14 +1,13 @@
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Header } from "./components/Header/Header";
+import { Header } from "./components/Header/Header"; 
 import { Footer } from "./components/Footer/Footer";
 
 import { AllWarehousesPage } from "./pages/AllWarehousesPage/AllWarehousesPage";
 import { AddWarehousePage } from "./pages/AddWarehousePage/AddWarehousePage";
 import { WarehousePage } from "./pages/WarehousePage/WarehousePage";
 import { UpdateWarehousePage } from "./pages/UpdateWarehousePage/UpdateWarehousePage";
-import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails';
 
 
 import { AllInventoryPage } from "./pages/AllInventoryPage/AllInventoryPage";
@@ -22,9 +21,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/warehouses" element={<AllWarehousesPage />} />
+        <Header/>
+        <Routes> 
+           <Route path="/warehouses" element={<AllWarehousesPage />} />
           <Route
             path="/warehouses/addWarehouse"
             element={<AddWarehousePage />}

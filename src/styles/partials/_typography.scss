@@ -1,15 +1,31 @@
 @font-face {
    font-family: 'Titillium Web', Arial, Helvetica, sans-serif, sans-serif;
+   src:  url("../../assets/fonts/TitilliumWeb-Regular.ttf") format('ttf');
    font-style: normal;
     font-weight: 400;
-    src:  url('../../assets/fonts/TitilliumWeb-Regular.ttf') format('ttf');
     
 }
 
 @font-face {
     font-family: 'Titillium Web' Arial, Helvetica, sans-serif, sans-serif;
+    src:  url('../../assets/fonts/TitilliumWeb-SemiBold.ttf') format('ttf');
     font-style: normal;
      font-weight: 600;
-     src:  url('../../assets/fonts/TitilliumWeb-SemiBold.ttf') format('ttf');
      
  }
+// //the ones below HOPEFULLY have the correct path
+//  @font-face {
+//     font-family: 'Titillium Web' Arial, Helvetica, sans-serif, sans-serif;
+//     src:  url('../assets/fonts/TitilliumWeb-SemiBold.ttf') format('ttf');
+//     font-style: normal;
+//      font-weight: 600;
+
+//  }
+
+//  @font-face {
+//     font-family: 'Titillium Web', Arial, Helvetica, sans-serif, sans-serif;
+//     src:  url("../../assets/fonts/TitilliumWeb-Regular.ttf") format('ttf');
+//     font-style: normal;
+//      font-weight: 400;
+     
+//  }

@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom'
 import smallLogo from '../../assets/logos/InStock-Logo_1x.png'
 import '../Header/Header.scss'
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className="header">
       <Link className="header__logo" to="/">
@@ -22,7 +22,7 @@ const Header = () => {
     </div>
   )
   
-}
+}; 
 
-export default Header
+
 
