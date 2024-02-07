@@ -31,8 +31,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-
-    
     }
 
     &__warehouse{
@@ -43,7 +41,12 @@
         padding-bottom: 0.5rem;
         text-decoration:none; 
         margin:0; 
-
+        font-size:0.8rem ;
+        line-height:1.25rem ;
+        @include tablet{
+            font-size: 0.88rem;
+            line-height: 1.38rem;
+        }
     }
 
     &__inventory{
@@ -54,32 +57,29 @@
         padding-bottom: 0.5rem;
         text-decoration:none; 
         margin:0; 
+        font-size:0.8rem ;
+        line-height:1.25rem ;
+        @include tablet{
+            font-size: 0.88rem;
+            line-height: 1.38rem;
+        }
     }
+
     &__hover:hover{
        color: $white;
         text-decoration: underline;
     }
-  
-
 }
 
-a{
+a{ //using this to target the automatic link styling on Link elements
+//that is difficult to override in the above styling
     text-decoration: none;
 }
 
-.active{
+.active{ //this is targetting the activeClassName=active element. 
     background-color: $instock-black;
     border-radius: 2rem;
     color: $white;    
 }
   
-  
-h3{ //Labels, Links & Buttons
-    font-size:0.8rem ;
-    line-height:1.25rem ;
-    @include tablet{
-        font-size: 0.88rem;
-        line-height: 1.38rem;
-    }
-  }
   

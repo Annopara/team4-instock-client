@@ -1,6 +1,8 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Header from './components/Header/Header';
+import WarehousesPage, { WarehousePage } from './pages/WarehousePage/WarehousePage';
+import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails';
 
 function App() {
   return (
@@ -8,8 +10,10 @@ function App() {
       <BrowserRouter>
         <Header/>
           <Routes>
-            <Route path="/warehouses" element={<WarehousesPage />} />
-            <Route path="/warehouses/addWarehouse" element={<AddWarehousePage />} />
+            {/* <Route path="/warehouses" element={<WarehousePage/>} /> */}
+            <Route path="/warehouses/:warehouseID" element={<WarehouseDetails/>} />
+  
+            {/* <Route path="/warehouses/addWarehouse" element={<AddWarehousePage />} />
             <Route path="/warehouses/:warehouseID" element={<WarehousePage />} />
             <Route path="/warehouses/:warehouseID/edit" element={<UpdateWarehousePage/>} />
             
@@ -18,9 +22,9 @@ function App() {
             <Route path="/inventory/:inventoryItemID" element={<InventoryItemPage />} />
             <Route path="/inventory/:inventoryItemID/edit" element={<UpdateInventoryItemPage />} />
             
-            <Route path="*" element={<Error404Page />} />
+            <Route path="*" element={<Error404Page />} /> */}
           </Routes>
-        <Footer/>
+        {/* <Footer/> */}
       </BrowserRouter>
     </div>
   );
