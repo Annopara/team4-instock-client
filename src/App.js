@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header/>
-          {/* <Routes>
+          <Routes>
             <Route path="/warehouses" element={<WarehousesPage />} />
             <Route path="/warehouses/addWarehouse" element={<AddWarehousePage />} />
             <Route path="/warehouses/:warehouseID" element={<WarehousePage />} />
@@ -20,7 +20,7 @@ function App() {
             
             <Route path="*" element={<Error404Page />} />
           </Routes>
-        <Footer/> */}
+        <Footer/>
       </BrowserRouter>
     </div>
   );
