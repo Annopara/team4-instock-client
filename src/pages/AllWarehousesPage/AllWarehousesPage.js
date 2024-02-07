@@ -1,16 +1,19 @@
 import "./AllWarehousesPage.scss";
-import { WarehousesHeadings } from "../../components/WarehousesHeadings/WarehousesHeadings"; 
+import { WarehousesHeadings } from "../../components/WarehousesHeadings/WarehousesHeadings";
 import { SearchHeader } from "../../components/SearchHeader/SearchHeader";
+import { WarehouseList } from "../../components/WarehouseList/WarehouseList";
+
 
 export const AllWarehousesPage = () => {
   return (
-      <section className="warehouses">
-        <SearchHeader
-          title="Warehouses"
-          btnText="+ Add New Warehouse"
-          navToTitle="AddWarehousePage"
-        />
-        <WarehousesHeadings />
+    <section className="warehouses">
+      <SearchHeader
+        title="Warehouses"
+        btnText="+ Add New Warehouse"
+        navToTitle="AddWarehousePage"
+      />
+      <WarehousesHeadings />
+      <WarehouseList />
     </section>
   );
 };

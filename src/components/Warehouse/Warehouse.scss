@@ -1,11 +1,11 @@
-@use "../../styles/partials/_typography.scss" as *;
-@use "../../styles/partials/_mixins.scss" as *;
-@use "../../styles/partials/_variables.scss" as *;
-@use "../../styles/partials/_globals.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/globals.scss" as *;
 
-.warehouseList {
-    &__box {
-      border-bottom: 0.1rem solid $Cloud;
+.warehouse {
+    &__container {
+      border-bottom: 0.1rem solid $cloud;
       padding: 0 1.5rem;
       display: flex;
       flex-wrap: wrap;
@@ -22,9 +22,8 @@
       }
     }
   
-    &__mobile-header {
-      @include table-header;
-      color: $Slate;
+    &__stacked-header {
+      color: $slate;
       text-transform: uppercase;
       margin-top: 1rem;
   
@@ -33,36 +32,24 @@
       }
     }
   
-    &__chevron-link {
-      display: flex;
-      gap: 0.25rem;
-    }
   
     &__link-anchor {
-      color: $Instock-Indigo;
+      color: $instock-indigo;
       text-decoration: none;
-      @include labels-buttons;
   
       @include tablet {
-        @include tablet_desktop_labels-buttons;
       }
     }
   
-    &__chevron-image {
-      width: 1.25rem;
-    }
-  
     &__text {
-      @include body-medimum;
       display: flex;
       flex-wrap: wrap;
       @include tablet {
-        @include tablet_desktop_body-medimum;
         width: 80%;
       }
     }
   
-    &__info-warehouse {
+    &__name {
       width: 50%;
       display: flex;
       flex-direction: column;
@@ -74,9 +61,19 @@
         flex-direction: row;
         align-items: center;
       }
+
+      &-link {
+        display: flex;
+        gap: 0.25rem;
+      
+
+        &-image {
+          width: 1.25rem;
+        }
+      }
     }
   
-    &__info-address {
+    &__address {
       width: 50%;
       display: inline-block;
   
@@ -91,7 +88,7 @@
       }
     }
   
-    &__info-contact {
+    &__contact {
       width: 50%;
       display: inline-block;
       order: -1;
@@ -106,23 +103,24 @@
       @include desktop {
         width: 40%;
       }
-    }
+    
   
-    &__info-contact-info {
-      width: 50%;
-      display: inline-block;
-  
-      @include tablet {
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        &-group {
+          width: 50%;
+          display: inline-block;
+      
+          @include tablet {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+      
+          @include desktop {
+            width: 50%;
+          }
+        }
       }
-  
-      @include desktop {
-        width: 50%;
-      }
-    }
   
     &__address-text {
       @include tablet {
@@ -139,7 +137,6 @@
         width: 20%;
         justify-content: flex-start;
         align-items: center;
-        gap: 1rem;
       }
     }
   

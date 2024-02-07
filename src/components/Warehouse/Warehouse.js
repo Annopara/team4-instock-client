@@ -1,68 +1,57 @@
 import "./Warehouse.scss";
+import { Link } from "react-router-dom";
+import Chevron from "../../assets/icons/chevron_right-24px.svg";
+import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
+import EditIcon from "../../assets/icons/edit-24px.svg";
+import { useState } from "react";
 
-export const Warehouse = ({ warehouse }) => {
-  const {
-    id,
-    name,
-    address,
-    city,
-    country,
-    contactName,
-    contactPhone,
-    contactEmail,
-  } = warehouse;
+
+export const Warehouse = ({id, name, address, city, country, contactName, contactPhone, contactEmail}) => {
+
 
   return (
-    <div className="warehouseList__box">
-      <div className="warehouseList__info-warehouse">
-        <h3 className="warehouseList__mobile-header">Warehouse</h3>
-        <div className="warehouseList__chevron-link">
+    <div className="warehouse__container">
+      <div className="warehouse__name">
+        <h3 className="warehouse__stacked-header">Warehouse</h3>
+        <div className="warehouse__name-link">
           <Link to={`/warehouses/${id}`} className="warehouseList__link-anchor">
             {name}
           </Link>
           <img
-            className="warehouseList__chevron-image"
+            className="warehouse_name-link-image"
             src={Chevron}
             alt="chevron"
           ></img>
         </div>
       </div>
-      <div className="warehouseList__info-address">
-        <h3 className="warehouseList__mobile-header">Address</h3>
-        <p className="warehouseList__text">
+      <div className="warehouse__address">
+        <h3 className="warehouse__stacked-header">Address</h3>
+        <p className="warehouse__address-text">
           {address}, {city}, {country}
         </p>
       </div>
-      <div className="warehouseList__info-contact">
-        <h3 className="warehouseList__mobile-header">Contact Name</h3>
-        <p className="warehouseList__text">{contactName}</p>
+      <div className="warehouse__contact">
+        <h3 className="warehouse__stacked-header">Contact Name</h3>
+        <p className="warehouse__text">{contactName}</p>
       </div>
-      <div className="warehouseList__info-contact-info">
-        <h3 className="warehouseList__mobile-header">Contact Information</h3>
-        <p className="warehouseList__text">{contactPhone}</p>
-        <p className="warehouseList__text">{contactEmail}</p>
+      <div className="warehouse__contact-group">
+        <h3 className="warehouse__stacked-header">Contact Information</h3>
+        <p className="warehouse__text">{contactPhone}</p>
+        <p className="warehouse__text">{contactEmail}</p>
       </div>
 
-      <div className="warehouseList__actions">
-        <Link to="/" className="warehouseList__link">
+      <div className="warehouse__actions">
+        <Link to="/" className="warehouse__link">
           <img
-            src={RemoveIcon}
-            alt="remove icon"
-            className="warehouseList__icon"
-            onClick={handleOpenModal}
+            src={DeleteIcon}
+            alt="delete icon"
+            className="warehouse__icon"
           />
         </Link>
-        <Link to={`/warehouses/${id}/edit`} className="warehouseList__link">
-          <img src={EditIcon} alt="edit icon" className="warehouseList__icon" />
+        <Link to={`/warehouses/${id}/edit`} className="warehouse__link">
+          <img src={EditIcon} alt="edit icon" className="warehouse__icon" />
         </Link>
       </div>
-
-      <Modal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        warehouseId={id}
-        warehouseName={name}
-      />
     </div>
   );
 };
