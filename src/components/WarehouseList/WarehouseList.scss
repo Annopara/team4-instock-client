@@ -4,18 +4,28 @@
 @use "../../styles/partials/globals.scss" as *;
 
 .warehouse-list {
-  &__container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-between;
-    background-color: pink;
+    width: 100%;
+
+    @include tablet {
+      align-items: center;
+      padding: 1.5rem 2rem;
+
+    }
+  
+
+  &__ul {
+    padding: 0;
+    display: flex;
+
+    @include tablet {
+      justify-content: space-between;
+    }
+  }
+
+  &__li {
+    list-style: none;
   }
 }
-
-.warehouse-list__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: pink;
-}
-
