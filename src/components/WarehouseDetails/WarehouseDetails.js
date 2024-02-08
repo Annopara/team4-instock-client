@@ -14,11 +14,11 @@ const WarehouseDetails = () => {
                 <Link to='/warehouses'>
                 <img className="warehouseDetails__img" src={arrow}/>
                 </Link>
-                <h1 className="warehouseDetails__title">Washington</h1> 
-                {/* <img src={pencilIcon}/> */}
- 
-                {/* please replace this with something to inject code */}
+                <h1 className="warehouseDetails__title">Washington</h1>  
+                {/* ^^^^ please replace this with something to inject code */}
             </div>
+
+            {/* is there an edit page this button links to? */}
             <div className="warehouseDetails__edit">
                 <button className="warehouseDetails__editButton">
     
@@ -31,18 +31,18 @@ const WarehouseDetails = () => {
 
         <div className="warehouseDetails__additionalInfo">
             <div className="warehouseDetails__address">
-                <h3 className="warehouseDetails__address--header">warehouse Address:</h3>
+                <h4 className="warehouseDetails__address--header">warehouse Address:</h4>
                 <p1 className="warehouseDetails__address--subheader" >300 pearl street SW, Washington USA</p1>
             </div>
 
             <div className="warehouseDetails__contacts">
                 <div className="warehouseDetails__contactName">
-                    <h3 className="warehouseDetails__contactName--header">Contact Name:</h3>
+                    <h4 className="warehouseDetails__contactName--header">Contact Name:</h4>
                     <p1 className="warehouseDetails__contactName--subheader" >Graeme Lyon Warehouse Manager</p1>
                 </div>
 
                 <div className="warehouseDetails__contactInfo" >
-                    <h3 className="warehouseDetails__contactInfo--header">Contact Information:</h3>
+                    <h4 className="warehouseDetails__contactInfo--header">Contact Information:</h4>
                     <p1 className="warehouseDetails__contactInfo--subheader" >+1asdfasdfadf </p1>
                 </div>
             </div>
