@@ -72,12 +72,11 @@
     }
 }
 
-a{ //using this to target the automatic link styling on Link elements
-//that is difficult to override in the above styling
+a{ 
     text-decoration: none;
 }
 
-.active{ //this is targetting the activeClassName=active element. 
+.active{ 
     background-color: $instock-black;
     border-radius: 2rem;
     color: $white;    
