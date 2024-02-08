@@ -3,13 +3,17 @@ import React from 'react'
 import pencilIcon from '../../assets/icons/edit-24px-white.svg'
 import arrow from '../../assets/icons/arrow_back-24px.svg'
 import './WarehouseDetails.scss'
+import { Link } from 'react-router-dom'
+
 
 const WarehouseDetails = () => {
   return (
     <section className="warehouseDetails">
         <div className="warehouseDetails__header">
             <div className="warehouseDetails__titleArrow">
+                <Link to='/warehouses'>
                 <img className="warehouseDetails__img" src={arrow}/>
+                </Link>
                 <h1 className="warehouseDetails__title">Washington</h1> 
                 {/* <img src={pencilIcon}/> */}
  
@@ -17,7 +21,9 @@ const WarehouseDetails = () => {
             </div>
             <div className="warehouseDetails__edit">
                 <button className="warehouseDetails__editButton">
+    
                     <img className="warehouseDetails__editButton--image" src={pencilIcon}/>
+                    
                     <p1 className="warehouseDetails__editButton--text" >Edit</p1>
                 </button>
             </div>
