@@ -1,10 +1,9 @@
 import './Footer.scss';
 
-function Footer() {
+ export function Footer() {
   return (
     <>
-    <p className="footer">© InStock Inc. All Rights Reserved.</p>
+    <p className="footer">&copy; InStock Inc. All Rights  Reserved.</p>
     </>
   )
 }
-export default Footer;
