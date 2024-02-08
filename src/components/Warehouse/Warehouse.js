@@ -11,6 +11,7 @@ export const Warehouse = ({id, name, address, city, country, contactName, contac
 
   return (
     <div className="warehouse__container">
+      <div className="warehouse__wrapper">
       <div className="warehouse__name">
         <h3 className="warehouse__stacked-header">Warehouse</h3>
         <div className="warehouse__name-link">
@@ -30,14 +31,17 @@ export const Warehouse = ({id, name, address, city, country, contactName, contac
           {address}, {city}, {country}
         </p>
       </div>
-      <div className="warehouse__contact">
-        <h3 className="warehouse__stacked-header">Contact Name</h3>
-        <p className="warehouse__text">{contactName}</p>
+      </div>
+      <div className="warehouse__wrapper">
+        <div className="warehouse__contact">
+          <h3 className="warehouse__stacked-header">Contact Name</h3>
+          <p className="warehouse__text">{contactName}</p>
       </div>
       <div className="warehouse__contact-group">
         <h3 className="warehouse__stacked-header">Contact Information</h3>
         <p className="warehouse__text">{contactPhone}</p>
         <p className="warehouse__text">{contactEmail}</p>
+      </div>
       </div>
 
       <div className="warehouse__actions">

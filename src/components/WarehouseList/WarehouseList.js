@@ -43,11 +43,11 @@ export const WarehouseList = () => {
   ];
 
   return (
-    <div className="warehouse-list__container">
-      <ul>
+    <div className="warehouse-list">
+      <ul className="warehouse-list__ul">
         {warehousesTemp.map((warehouse) => {
           return (
-            <li className="warehouse">
+            <li className="warehouse-list__li">
               {
                 <Warehouse
                   // id={warehouse.id}

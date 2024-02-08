@@ -1,31 +1,28 @@
 @font-face {
-   font-family: 'Titillium Web', Arial, Helvetica, sans-serif, sans-serif;
-   src:  url("../../assets/fonts/TitilliumWeb-Regular.ttf") format('ttf');
-   font-style: normal;
-    font-weight: 400;
-    
+  font-family: "Titillium Web", "Courier New", monospace;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/TitilliumWeb-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'Titillium Web' Arial, Helvetica, sans-serif, sans-serif;
-    src:  url('../../assets/fonts/TitilliumWeb-SemiBold.ttf') format('ttf');
-    font-style: normal;
-     font-weight: 600;
-     
- }
-// //the ones below HOPEFULLY have the correct path
-//  @font-face {
-//     font-family: 'Titillium Web' Arial, Helvetica, sans-serif, sans-serif;
-//     src:  url('../assets/fonts/TitilliumWeb-SemiBold.ttf') format('ttf');
-//     font-style: normal;
-//      font-weight: 600;
+  font-family: "TitilliumWeb", "Courier New", monospace;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.ttf") format("truetype");
+}
 
-//  }
+@font-face {
+  font-family: "Titillium Web", "Courier New", monospace;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff");
+}
 
-//  @font-face {
-//     font-family: 'Titillium Web', Arial, Helvetica, sans-serif, sans-serif;
-//     src:  url("../../assets/fonts/TitilliumWeb-Regular.ttf") format('ttf');
-//     font-style: normal;
-//      font-weight: 400;
-     
-//  }
+@font-face {
+  font-family: "Titillium Web", "Courier New", monospace;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff");
+}
+

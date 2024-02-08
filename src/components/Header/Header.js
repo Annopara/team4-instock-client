@@ -11,11 +11,9 @@ export const Header = () => {
       </Link>
       <div className="header__text">
         <NavLink activeClassName="active" className='link' to="/warehouses" >
-            {/* fix link path when pages up and running */}
             <h3 className="header__warehouse header__hover " >Warehouses</h3>
         </NavLink>
         <NavLink activeClassName="active" className='link' to="/inventory"> 
-        {/* fix link path when pages up and running */}
             <h3 className="header__inventory header__hover">Inventory</h3>
         </NavLink>
       </div >
