@@ -1,8 +1,10 @@
-import "./Footer.scss"
-export const Footer = () => {
-    return (
-        <footer className="footer">
-        <p className="footer__text">&copy; InStock Inc. All Rights Reserved.</p>
-        </footer>
-    );
-    };
+import './Footer.scss';
+
+function Footer() {
+  return (
+    <>
+    <p className="footer">© InStock Inc. All Rights Reserved.</p>
+    </>
+  )
+}
+export default Footer;
