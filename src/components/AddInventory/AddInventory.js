@@ -1,152 +1,206 @@
-import backArrow from '../../assets/Icons/arrow_back-24px.svg';
-import './AddInventory.scss';
-import dropDownArrow from '../../assets/Icons/arrow_drop_down-24px.svg';
-import '../Warehouse/Warehouse.scss';
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
+import './AddInventory.scss';
+import errorIcon from '../../assets/icons/error-24px.svg';
+import arrowBack from '../../assets/icons/arrow_back-24px.svg';
 
-
-function AddInventory() {
-  const categories = ['Electronics', 'Gear', 'Apparel', 'Accessories', 'Health', 'Electronics'];
-  const [warehouseNames, setWarehouseNames] = useState([]);
-  const [warehouses, setWarehouses] = useState([]);
-  const [stockStatus, setStockStatus] = useState('In Stock');
-  const [selectedWarehouse, setSelectedWarehouse] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
-  const navigate = useNavigate();
-  const handleBackClick = () => {navigate('/inventory');}
-
-  const [itemData, setItemData] = useState({
-    warehouse_id: 1,
-    item_name: '',
-    description: '',
-    category: categories[0],
-    status: 'In Stock',
-    quantity: 0,
-  });
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    if (name == 'warehouse_name') setSelectedWarehouse(value);
-    else if (name == 'category') setSelectedCategory(value);
-    else if (name == 'status') setStockStatus(value); 
-    setItemData({
-      ...itemData,
-      [name]: value,
+const AddInventory = () => {
+    const [formData, setFormData] = useState({
+        itemName: '',
+        description: '',
+        category: '',
+        status: '',
+        quantity: 0,
+        warehouseName: '',
     });
-  }
 
-  const postInventoryItem = async () => { 
-    try {
-      const warehouse = warehouses.find((warehouseItem) => warehouseItem.warehouse_name == itemData.warehouse_name);
-      itemData.warehouse_id = warehouse.id;
-      delete itemData.warehouse_name;
-      itemData.quantity = parseInt(itemData.quantity);
-      
-      const { error, value: cleanedData } = helpers.inventorySchema.validate(itemData);
-      if (error) console.error("Failed to validate inventory data: ", error);
-      else {
-        const response = await axios.post('http://3.20.237.64:80/inventories', cleanedData);
-        console.log(response.data);
-        handleBackClick();
-      }
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
 
-    } catch (error) {
-      console.log(error);
-    }
-  }
+    const submitForm = async (event) => {
+        event.preventDefault();
+        const addItem = {
+            id: uuidv4(),
+            ...formData,
+            warehouseID: 'need to assign to assign a proper warehouseID', 
+        };
 
-  useEffect(() =>{
-    async function fetchWarehouseNames(){
-      const response = await axios.get('http://3.20.237.64:80/warehouses');
-      setWarehouses(response.data);
-      let updatedArray = [];
-      for(let i = 0; i<response.data.length; i++) updatedArray = [...updatedArray, response.data[i].warehouse_name];
-      setWarehouseNames(updatedArray);
-      setSelectedWarehouse(updatedArray[0]);
-      itemData.warehouse_name = response.data[0].warehouse_name;
-    }
+        try {
+            await axios.post("http://localhost:8088/inventories", addItem);
+            console.log('Form submitted', addItem);
+            setFormData({
+                itemName: '',
+                description: '',
+                category: '',
+                status: '',
+                quantity: 0,
+                warehouseName: '',
+            });
+        } catch (error) {
+            console.error('Form submission error', error);
+        }
+    };
 
-    fetchWarehouseNames();
-  }, []);
+    return (
+        <>
+        <section className="addInventory">
+            <div className="addInventory__heading">
+                <img className="addInventory__heading-arrow" src={arrowBack} alt="Back arrow" />
+                    <h1 className="addInventory__heading-title">Add New Inventory Item</h1>
+            </div>
+        <div className="addInventory__container">
+        <form className="item-form" onSubmit={submitForm}>
+            <div className="item-form__container">
+                <div className="item-form__details">
+                    <h2 className="item-form__title">Item Details</h2>
+                    <label className="item-form__label">Item Name</label>
+                    <input
+                        className="item-form__input"
+                        type="text"
+                        placeholder="Item Name"
+                        name="itemName"
+                        required
+                        value={formData.itemName}
+                        onChange={handleChange}
+                    />
+                    {formData.itemName === "" && (
+                        <div className="item-form__error">
+                            <img className="item-form__error-icon" src={errorIcon} alt="Error icon"/>
+                            <div className="item-form__error-text">This field is required</div>
+                        </div>
+                    )}
 
+                    <label className="item-form__label">Description</label>
+                    <textarea
+                        className="item-form__description-input"
+                        placeholder="Please enter a brief item description..."
+                        name="description"
+                        required
+                        value={formData.description}
+                        onChange={handleChange}
+                    />
+                    {formData.description === "" && (
+                        <div className="item-form__error">
+                            <img className="item-form__error-icon" src={errorIcon} alt="Error icon"/>
+                            <div className="item-form__error-text">This field is required</div>
+                        </div>
+                    )}
 
-  // RETURN FUNCTION
-  return (
-    <div className="warehouse">
-      <div className="newInv-heading">
-        <img className="newInv-heading__img cursor-pointer" src={backArrow} alt="Back Arrow" onClick={handleBackClick} />
+                    <label className="item-form__label">Category</label>
+                    <select
+                        className="item-form__dropdown"
+                        name="category"
+                        required
+                        value={formData.category}
+                        onChange={handleChange}
+                    >
+                        <option value="">Please Select</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Gear">Gear</option>
+                        <option value="Apparel">Apparel</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Health">Health</option>
+                    </select>
+                    {formData.category === "" && (
+                        <div className="item-form__error">
+                            <img className="item-form__error-icon" src={errorIcon} alt="Error icon"/>
+                            <div className="item-form__error-text">This field is required</div>
+                        </div>
+                    )}
+                </div>
 
-        <span>Add New Inventory Item</span>
-      </div>
-      <div className="newInv-container">
-        <div className="newInv-itemDetails">
-          <p className="newInv__item-heading">Item Details</p>
-          <p className="newInv__item-name">Item Name</p>
-          <input className="newInv__item-input" type="text" name='item_name' onChange={handleInputChange} placeholder="Item Name" />
-          <p className="newInv__item-name">Description</p>
-          <textarea className="newInv__item-descriptionInput" placeholder="Please enter a brief item description" name='description' onChange={handleInputChange} cols="30" rows="10"></textarea>
-          <p className="newInv__item-name">Category</p>
-          <select
-            className="newInv__item-input"
-            value={selectedCategory}
-            name='category'
-            onChange={handleInputChange}
-          >
-            {/* <option value="">Please Select</option> */}
-            {categories.map((category, index) => (
-              <option key={index} value={category}>{category}</option>
-            ))}
-          </select>
+                <div className="item-form__line"></div>
+
+                <div className="item-form__availability">
+                    <h2 className="item-form__title">Item Availability</h2>
+                    <label className="item-form__label">Status</label>
+                    <div className="item-form__status">
+                        <div className="item-form__status-container">
+                            <input
+                                className="item-form__status-container-option"
+                                type="radio"
+                                value="In Stock"
+                                name="status"
+                                checked={formData.status === "In Stock"}
+                                onChange={handleChange}
+                            />
+                            <p className="item-form__status-container-text">In stock</p>
+                        </div>
+                        <div className="item-form__status-container">
+                            <input
+                                className="item-form__status-container-option"
+                                type="radio"
+                                value="Out of Stock"
+                                name="status"
+                                checked={formData.status === "Out of Stock"}
+                                onChange={handleChange}
+                            />
+                            <p className="item-form__status-container-text">Out of stock</p>
+                        </div>
+                    </div>
+                    {formData.status === "" && (
+                        <div className="item-form__error">
+                            <img className="item-form__error-icon" src={errorIcon} alt="Error icon"/>
+                            <div className="item-form__error-text">This field is required</div>
+                        </div>
+                    )}
+                    {formData.status === 'In Stock' && (
+                        <>
+                            <label className="item-form__label">Quantity</label>
+                            <input
+                                className="item-form__input"
+                                type="number"
+                                placeholder="0"
+                                name="quantity"
+                                required={formData.status === 'In Stock'}
+                                value={formData.quantity}
+                                onChange={handleChange}
+                            />
+                        </>
+                    )}
+
+                    <label className="item-form__label">Warehouse</label>
+                    <select
+                        className="item-form__dropdown"
+                        name="warehouseName"
+                        required
+                        value={formData.warehouseName}
+                        onChange={handleChange}
+                    >
+                        <option value="">Please Select</option>
+                        <option type="text" value="Manhatten">Manhatten</option>
+                        <option type="text" value="Washington">Washington</option>
+                        <option type="text" value="Jersey">Jersey</option>
+                        <option type="text" value="San Fran">San Fran</option>
+                        <option type="text" value="Santa Monica">Santa Monica</option>
+                        <option type="text" value="Seattle">Seattle</option>
+                        <option type="text" value="Miami">Miami</option>
+                    </select>
+                    {formData.warehouseName === "" && (
+                        <div className="item-form__error">
+                            <img className="item-form__error-icon" src={errorIcon} alt="Error icon"/>
+                            <div className="item-form__error-text">This field is required</div>
+                        </div>
+                    )}
+                </div>
+            </div>
+            <div className="item-form__button">
+                <div className="item-form__button-container">
+                    <button type="button" className="item-form__button-cancel">Cancel</button>
+                    <button type="submit" className="item-form__button-add">+ Add Item</button>
+                </div>
+            </div>
+        </form>
         </div>
-        <div className="newInv-itemAvailability">
-          <p className="newInv__item-heading">Item Availability</p>
-          <p className="newInv__item-name">Status</p>
-          <div className="newInv__radio">
-            <label className="newInv__radio-container">
-              <input
-                type="radio"
-                name="status"
-                value="In Stock"
-                checked={stockStatus === 'In Stock'}
-                onChange={handleInputChange}
-              />
-              <span className="newInv__radio-label">In stock</span>
-            </label>
-            <label className="newInv__radio-container">
-              <input
-                type="radio"
-                name="status"
-                value="Out Of Stock"
-                checked={stockStatus === 'Out Of Stock'}
-                onChange={handleInputChange}
-              />
-              <span className="newInv__radio-label">Out of stock</span>
-            </label>
-          </div>
+            </section>
+        </>
+    );
+};
 
-          <p className="newInv__item-name">Quantity</p>
-          <input className="newInv__item-input" type="text" placeholder="0" name="quantity" onChange={handleInputChange} />
-          <p className="newInv__item-name">Warehouse</p>
-          <select
-            className="newInv__item-input"
-            name='warehouse_name'
-            value={selectedWarehouse}
-            onChange={handleInputChange}
-          >
-            {/* <option value="">Please Select</option> */}
-            {warehouseNames?.map((warehouse, index) => (
-              <option key={index} value={warehouse}>{warehouse}</option>
-            ))}
-          </select>
-        </div>
-      </div>
-      <div className="newInv__btn-container">
-        <button className="newInv__cancel-btn cursor-pointer" onClick={() => handleBackClick()}>Cancel</button>
-        <button className="newInv__btn-blue cursor-pointer" onClick={() => postInventoryItem()}> + Add Item</button>
-      </div>
-    </div>
-  );
-}
 export default AddInventory;
