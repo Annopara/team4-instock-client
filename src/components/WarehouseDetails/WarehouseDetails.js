@@ -1,5 +1,4 @@
 import React from 'react'
-//set up backend warehouse ID request
 import pencilIcon from '../../assets/icons/edit-24px-white.svg'
 import arrow from '../../assets/icons/arrow_back-24px.svg'
 import './WarehouseDetails.scss'
@@ -25,7 +24,6 @@ const WarehouseDetails = () => {
                 <img className="warehouseDetails__img" src={arrow}/>
                 </Link>
                 <h1 className="warehouseDetails__title">{warehouseDetail.warehouse_name}</h1>  
-                {/* libbie will replace this with something to inject the correct warehouse info */}
             </div>
 
             <div className="warehouseDetails__edit">
