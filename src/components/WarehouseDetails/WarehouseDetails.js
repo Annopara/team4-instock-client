@@ -17,7 +17,6 @@ const WarehouseDetails = () => {
 
         console.log(warehouseDetail); 
 
-
   return (
     <section className="warehouseDetails">
         <div className="warehouseDetails__header">
@@ -36,7 +35,7 @@ const WarehouseDetails = () => {
         
                         <img className="warehouseDetails__editButton--image" src={pencilIcon}/>
                         
-                        <p1 className="warehouseDetails__editButton--text" >Edit</p1>
+                        <p className="warehouseDetails__editButton--text" >Edit</p>
                     </button>
                 </Link>
             </div>
@@ -45,9 +44,9 @@ const WarehouseDetails = () => {
         <div className="warehouseDetails__additionalInfo">
             <div className="warehouseDetails__address">
                 <h4 className="warehouseDetails__address--header">warehouse Address:</h4>
-                <p1 className="warehouseDetails__address--subheader" >{warehouseDetail.address}</p1>
-                <p1 className="warehouseDetails__address--subheader" >{warehouseDetail.city}</p1>
-                <p1 className="warehouseDetails__address--subheader" >{warehouseDetail.country}</p1>
+                <p className="warehouseDetails__address--subheader" >{warehouseDetail.address}</p>
+                <p className="warehouseDetails__address--subheader" >{warehouseDetail.city}</p>
+                <p className="warehouseDetails__address--subheader" >{warehouseDetail.country}</p>
 
 
             </div>
@@ -55,14 +54,14 @@ const WarehouseDetails = () => {
             <div className="warehouseDetails__contacts">
                 <div className="warehouseDetails__contactName">
                     <h4 className="warehouseDetails__contactName--header">Contact Name:</h4>
-                    <p1 className="warehouseDetails__contactName--subheader" >{warehouseDetail.contact}</p1>
-                    <p1 className="warehouseDetails__contactName--subheader" >{warehouseDetail.contact_position}</p1>
+                    <p className="warehouseDetails__contactName--subheader" >{warehouseDetail.contact_name}</p>
+                    <p className="warehouseDetails__contactName--subheader" >{warehouseDetail.contact_position}</p>
                 </div>
 
                 <div className="warehouseDetails__contactInfo" >
                     <h4 className="warehouseDetails__contactInfo--header">Contact Information:</h4>
-                    <p1 className="warehouseDetails__contactInfo--subheader" >{warehouseDetail.contact_phone} </p1>
-                    <p1 className="warehouseDetails__contactInfo--subheader" >{warehouseDetail.contact_email}</p1>
+                    <p className="warehouseDetails__contactInfo--subheader" >{warehouseDetail.contact_phone} </p>
+                    <p className="warehouseDetails__contactInfo--subheader" >{warehouseDetail.contact_email}</p>
 
                 </div>
             </div>
