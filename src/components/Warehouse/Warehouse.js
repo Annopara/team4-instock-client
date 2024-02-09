@@ -11,6 +11,7 @@ export const Warehouse = ({id, name, address, city, country, contactName, contac
 
   return (
     <div className="warehouse__container">
+      <div className="warehouse__flex">
       <div className="warehouse__wrapper">
       <div className="warehouse__name">
         <h3 className="warehouse__stacked-header">Warehouse</h3>
@@ -19,7 +20,7 @@ export const Warehouse = ({id, name, address, city, country, contactName, contac
             {name}
           </Link>
           <img
-            className="warehouse_name-link-image"
+            className="warehouse__name-link-image"
             src={Chevron}
             alt="chevron"
           ></img>
@@ -41,6 +42,7 @@ export const Warehouse = ({id, name, address, city, country, contactName, contac
         <h3 className="warehouse__stacked-header">Contact Information</h3>
         <p className="warehouse__text">{contactPhone}</p>
         <p className="warehouse__text">{contactEmail}</p>
+      </div>
       </div>
       </div>
 
