@@ -8,7 +8,6 @@ export const WarehousePage = () => {
   return (
     <>
     <WarehouseDetails/>
-    {/* <Link to='/warehouses/1'/> */}
     {/* <Link to='/warehouses/:id'/> in the real version*/}
 
     </>
