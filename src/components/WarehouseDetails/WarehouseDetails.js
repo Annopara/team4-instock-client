@@ -3,10 +3,13 @@ import React from 'react'
 import pencilIcon from '../../assets/icons/edit-24px-white.svg'
 import arrow from '../../assets/icons/arrow_back-24px.svg'
 import './WarehouseDetails.scss'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 
 const WarehouseDetails = () => {
+    const urlParams = useParams(); 
+
+
   return (
     <section className="warehouseDetails">
         <div className="warehouseDetails__header">
@@ -15,17 +18,19 @@ const WarehouseDetails = () => {
                 <img className="warehouseDetails__img" src={arrow}/>
                 </Link>
                 <h1 className="warehouseDetails__title">Washington</h1>  
-                {/* ^^^^ please replace this with something to inject code */}
+                {/* libbie will replace this with something to inject the correct warehouse info */}
             </div>
 
-            {/* is there an edit page this button links to? */}
             <div className="warehouseDetails__edit">
-                <button className="warehouseDetails__editButton">
-    
-                    <img className="warehouseDetails__editButton--image" src={pencilIcon}/>
-                    
-                    <p1 className="warehouseDetails__editButton--text" >Edit</p1>
-                </button>
+                <Link to='/updatewarehousepage'> 
+                {/* is this link^^^ going to the correct location? */}
+                    <button className="warehouseDetails__editButton">
+        
+                        <img className="warehouseDetails__editButton--image" src={pencilIcon}/>
+                        
+                        <p1 className="warehouseDetails__editButton--text" >Edit</p1>
+                    </button>
+                </Link>
             </div>
         </div>
 
