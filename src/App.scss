@@ -3,7 +3,6 @@
 @use "./styles/partials/_typography.scss" as *;
 @use "./styles/partials/_globals.scss" as *;
 
-
 .page-container {
   position: relative;
   top: -4rem;
@@ -21,7 +20,7 @@
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     height: 100%;
@@ -36,5 +35,3 @@ body {
   color: $instock-black;
   background-color: $light-grey;
 }
-
-
