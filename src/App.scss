@@ -3,7 +3,6 @@
 @use "./styles/partials/_typography.scss" as *;
 @use "./styles/partials/_globals.scss" as *;
 
-
 .page-container {
   position: relative;
   top: -4rem;
@@ -21,7 +20,7 @@
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     height: 100%;
@@ -32,9 +31,7 @@
 }
 
 body {
-  font-family: "Titillium Web", "Courier New", monospace;
+  font-family: "TitilliumWeb", "Courier New", monospace;
   color: $instock-black;
   background-color: $light-grey;
 }
-
-
