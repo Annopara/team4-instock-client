@@ -4,10 +4,18 @@ import pencilIcon from '../../assets/icons/edit-24px-white.svg'
 import arrow from '../../assets/icons/arrow_back-24px.svg'
 import './WarehouseDetails.scss'
 import { Link, useParams } from 'react-router-dom'
-
+import warehouseData from "./WarehouseDetailsTestData.json"
 
 const WarehouseDetails = () => {
     const urlParams = useParams(); 
+
+    console.log(warehouseData); 
+
+        const warehouseDetail = warehouseData.find((warehouse)=>{
+            return warehouse.id == urlParams.warehouseID; 
+        }); 
+
+        console.log(warehouseDetail); 
 
 
   return (
@@ -17,7 +25,7 @@ const WarehouseDetails = () => {
                 <Link to='/warehouses'>
                 <img className="warehouseDetails__img" src={arrow}/>
                 </Link>
-                <h1 className="warehouseDetails__title">Washington</h1>  
+                <h1 className="warehouseDetails__title">{warehouseDetail.warehouse_name}</h1>  
                 {/* libbie will replace this with something to inject the correct warehouse info */}
             </div>
 
@@ -37,18 +45,25 @@ const WarehouseDetails = () => {
         <div className="warehouseDetails__additionalInfo">
             <div className="warehouseDetails__address">
                 <h4 className="warehouseDetails__address--header">warehouse Address:</h4>
-                <p1 className="warehouseDetails__address--subheader" >300 pearl street SW, Washington USA</p1>
+                <p1 className="warehouseDetails__address--subheader" >{warehouseDetail.address}</p1>
+                <p1 className="warehouseDetails__address--subheader" >{warehouseDetail.city}</p1>
+                <p1 className="warehouseDetails__address--subheader" >{warehouseDetail.country}</p1>
+
+
             </div>
 
             <div className="warehouseDetails__contacts">
                 <div className="warehouseDetails__contactName">
                     <h4 className="warehouseDetails__contactName--header">Contact Name:</h4>
-                    <p1 className="warehouseDetails__contactName--subheader" >Graeme Lyon Warehouse Manager</p1>
+                    <p1 className="warehouseDetails__contactName--subheader" >{warehouseDetail.contact}</p1>
+                    <p1 className="warehouseDetails__contactName--subheader" >{warehouseDetail.contact_position}</p1>
                 </div>
 
                 <div className="warehouseDetails__contactInfo" >
                     <h4 className="warehouseDetails__contactInfo--header">Contact Information:</h4>
-                    <p1 className="warehouseDetails__contactInfo--subheader" >+1asdfasdfadf </p1>
+                    <p1 className="warehouseDetails__contactInfo--subheader" >{warehouseDetail.contact_phone} </p1>
+                    <p1 className="warehouseDetails__contactInfo--subheader" >{warehouseDetail.contact_email}</p1>
+
                 </div>
             </div>
 
