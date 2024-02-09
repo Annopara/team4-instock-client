@@ -2,3 +2,203 @@
 @use "../../styles/partials/mixins.scss" as *;
 @use "../../styles/partials/typography.scss" as *;
 @use "../../styles/partials/globals.scss" as *;
+
+.warehouseDetails{
+    display: flex;
+    flex-direction: column;
+    padding-left:1rem; 
+    padding-right:2rem; 
+    padding-top:2rem; 
+
+    @include tablet{
+        padding-left: 2rem; 
+        padding-right:2rem; 
+        padding-top: 2rem; 
+        padding-bottom: 2rem;
+    }
+
+    @include desktop{
+        padding-left: 3.95rem; 
+        padding-right:3.95rem; 
+        padding-top: 2rem; 
+        padding-bottom: 2rem;
+    }
+
+    &__header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: solid 1px $cloud; 
+        padding-bottom: 1.5rem; 
+
+    }
+
+    &__titleArrow{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__img{
+        height:24px; 
+        padding-right:0.5rem; 
+    }
+    &__title{
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 400;
+        @include tablet{
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+    }
+
+    &__edit{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__editButton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $instock-indigo;
+        border-style: none;
+        border-radius: 1.5rem;
+        color:$white; 
+
+        &--image{
+            padding-right:0.25rem;
+            padding-left: 0.25rem;
+            padding-top: 0.25rem;
+            padding-bottom:0.25rem; 
+
+            @include tablet {
+                padding-right:0.25rem;
+                padding-left:0.5rem; 
+            }
+        }
+
+        &--text{
+            display:none;
+            @include tablet{
+                display: flex;
+                padding-right:1rem ;
+            }
+        }
+    }
+
+    &__additionalInfo{
+        display: flex;
+        flex-direction: column;
+        padding-top:1.5rem; 
+        padding-bottom:1.5rem;
+
+        @include tablet{
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+    }
+
+    &__address{
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            width:15vw; 
+
+        }
+        &--header{
+            font-size: 0.69rem;
+            line-height: 1rem;
+            text-transform: uppercase;
+            color: $slate;
+            
+                @include tablet{
+                    font-size: 0.75rem;
+                    line-height: 1.12rem;
+                }
+        }
+        &--subheader{
+            font-size: 0.69rem;
+            line-height: 1rem;
+            color: $instock-black;
+            @include tablet{
+                font-size: 0.75rem;
+                line-height: 1.12rem;
+            }
+        }
+    }
+
+    &__contacts{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top:1.5rem;
+        
+        @include tablet{
+            width: 50vw;
+            padding-top:0;
+            border-left: solid 1px  $cloud ;
+            padding-left: 2rem;
+            padding-right:2rem;
+            justify-content: space-around;
+        }
+    }
+    &__contactName{
+        display: flex;
+        flex-direction: column;
+        width:23vw; 
+        @include tablet{
+            width:12vw; 
+        }
+
+    
+        &--header{
+            font-size: 0.69rem;
+            line-height: 1rem;
+            text-transform: uppercase;
+            color: $slate;
+                @include tablet{
+                    font-size: 0.75rem;
+                    line-height: 1.12rem;
+                }
+        }
+        &--subheader{
+            font-size: 0.69rem;
+            line-height: 1rem;
+            color: $instock-black;
+            @include tablet{
+                font-size: 0.75rem;
+                line-height: 1.12rem;
+            }
+        }
+    }
+    &__contactInfo{
+        display: flex;
+        flex-direction: column;
+    
+        &--header{
+            font-size: 0.69rem;
+            line-height: 1rem;
+            text-transform: uppercase;
+            color: $slate;
+                @include tablet{
+                    font-size: 0.75rem;
+                    line-height: 1.12rem;
+                }
+        }
+
+        &--subheader{
+            font-size: 0.69rem;
+            line-height: 1rem;
+            color: $instock-black;
+            @include tablet{
+                font-size: 0.75rem;
+                line-height: 1.12rem;
+            }
+        }
+    }
+}
+
