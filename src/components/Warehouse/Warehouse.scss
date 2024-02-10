@@ -17,13 +17,13 @@
 
   &__container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     padding: 1rem;
-    flex: 1 1 0;
 
     @include tablet {
-      flex-wrap: nowrap;
+      flex-direction: row;
       justify-content: space-between;
       min-height: 4.75rem;
       padding: 0;
@@ -35,6 +35,12 @@
 
   &__flex {
     display: flex;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__wrapper {
@@ -45,7 +51,7 @@
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
-      width: 100%;
+      width: 50%;
     }
   }
 
@@ -53,21 +59,26 @@
     width: 100%;
     color: $slate;
     text-transform: uppercase;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     text-align: left;
+    font-weight: 600;
 
     @include tablet {
       display: none;
     }
   }
 
-  &__link-anchor {
-    color: $instock-indigo;
-    text-decoration: none;
+  &__link {
+    &-anchor {
+      color: $instock-indigo;
+      text-decoration: none;
+      font-size: 0.8125rem;
 
- 
-
-    @include tablet {
+      @include tablet {
+      }
+    }
+    &-image {
+      width: 1rem;
     }
   }
 
@@ -75,6 +86,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    font-size: 0.8125rem;
 
     @include tablet {
     }
@@ -110,7 +122,6 @@
     width: 100%;
 
     @include tablet {
-     
     }
 
     @include desktop {
@@ -118,7 +129,6 @@
     }
 
     &-text {
-      width: 80%;
       text-align: left;
     }
   }
@@ -137,22 +147,15 @@
     }
 
     @include desktop {
-      width: 50%;
     }
 
-    &-group {
+    &-info {
       width: 100%;
-      display: inline-block;
 
       @include tablet {
-        width: 50%;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-      }
-
-      @include desktop {
-        width: 50%;
       }
     }
   }
@@ -163,7 +166,7 @@
     margin-bottom: 1rem;
 
     @include tablet {
-      width: 80%;
+      width: 70%;
       margin-bottom: 0;
     }
   }
@@ -175,7 +178,7 @@
 
     @include tablet {
       justify-content: flex-end;
-      width: 10%;
+      width: 11%;
     }
   }
 
@@ -187,7 +190,18 @@
     }
 
     &:first-child {
-      margin-right: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__name,
+  &__address,
+  &__contact,
+  &__contact-info {
+    font-size: 0.6875rem;
+
+    @include tablet {
+      font-size: 0.8125rem;
     }
   }
 }

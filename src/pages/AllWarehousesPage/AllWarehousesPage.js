@@ -4,6 +4,7 @@ import { SearchHeader } from "../../components/SearchHeader/SearchHeader";
 import { WarehouseList } from "../../components/WarehouseList/WarehouseList";
 
 export const AllWarehousesPage = () => {
+
   return (
     <section className="warehouses">
       <SearchHeader
