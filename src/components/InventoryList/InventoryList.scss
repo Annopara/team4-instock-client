@@ -1,6 +1,7 @@
-@import '../../styles/partials/globals.scss';
-@import '../../styles/partials/variables.scss';
-@import '../../styles/partials/mixins.scss';
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/globals.scss" as *;
 
 .inventoryList {
   position: absolute;
