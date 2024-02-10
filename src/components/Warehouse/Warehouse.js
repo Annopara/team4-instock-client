@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 import Chevron from "../../assets/icons/chevron_right-24px.svg";
 import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
-import { useState } from "react";
-
 
 export const Warehouse = ({id, name, address, city, country, contactName, contactPhone, contactEmail}) => {
-
 
   return (
     <div className="warehouse__container">
