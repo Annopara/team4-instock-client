@@ -38,7 +38,7 @@ export const Warehouse = ({id, name, address, city, country, contactName, contac
           <h3 className="warehouse__stacked-header">Contact Name</h3>
           <p className="warehouse__text">{contactName}</p>
       </div>
-      <div className="warehouse__contact-group">
+      <div className="warehouse__contact-info">
         <h3 className="warehouse__stacked-header">Contact Information</h3>
         <p className="warehouse__text">{contactPhone}</p>
         <p className="warehouse__text">{contactEmail}</p>

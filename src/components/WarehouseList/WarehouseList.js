@@ -31,14 +31,14 @@ export const WarehouseList = () => {
   const warehousesTemp = [
     {
       id: 1,
-      warehouse_name: "Warehouse 1",
-      address: "123 Warehouse St",
-      city: "Warehouse City",
-      country: "Warehouse Country",
-      contact_name: "Warehouse Contact",
-      contact_phone: "123-456-7890",
+      warehouse_name: "Manhattan",
+      address: "503 Broadway",
+      city: "New York",
+      country: "USA",
+      contact_name: "Parmin Aujila",
+      contact_phone: "1-(629)-555-0129",
 
-      contact_email: "warehouse@email.com",
+      contact_email: "paujila@instock.com",
     },
   ];
 
@@ -50,23 +50,16 @@ export const WarehouseList = () => {
             <li className="warehouse-list__li">
               {
                 <Warehouse
-                  // id={warehouse.id}
-                  // name={warehouse.warehouse_name}
-                  // address={warehouse.address}
-                  // city={warehouse.city}
-                  // country={warehouse.country}
-                  // contactName={warehouse.contact_name}
-                  // contactPhone={warehouse.contact_phone}
-                  // contactEmail={warehouse.contact_email}
+                  id={warehouse.id}
+                  name={warehouse.warehouse_name}
+                  address={warehouse.address}
+                  city={warehouse.city}
+                  country={warehouse.country}
+                  contactName={warehouse.contact_name}
+                  contactPhone={warehouse.contact_phone}
+                  contactEmail={warehouse.contact_email}
                   //fetchWarehouseData={fetchWarehouseData}
-                  id="1"
-                  name="Warehouse 1"
-                  address="123 Warehouse St"
-                  city="Warehouse City"
-                  country="Warehouse Country"
-                  contactName="Warehouse Contact"
-                  contactPhone="123-456-7890"
-                  contactEmail="warehouse@email.com"
+ 
                 />
               }
             </li>

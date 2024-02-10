@@ -4,21 +4,20 @@
 @use "../../styles/partials/globals.scss" as *;
 
 .warehouse-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 
-    @include tablet {
-      align-items: center;
-      padding: 1.5rem 2rem;
-
-    }
-  
+  @include tablet {
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
 
   &__ul {
     padding: 0;
     display: flex;
+    width: 100%;
 
     @include tablet {
       justify-content: space-between;
@@ -27,5 +26,6 @@
 
   &__li {
     list-style: none;
+    width: 100%;
   }
 }
