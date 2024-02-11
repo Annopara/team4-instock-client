@@ -28,39 +28,14 @@ export const WarehouseList = () => {
     fetchWarehouseData();
   }, []);
 
-  let warehouseTemp = [
-    {
-      "id": 1,
-      "warehouse_name": "Manhattan",
-      "address": "503 Broadway",
-      "city": "New York",
-      "country": "USA",
-      "contact_name": "Parmin Aujla",
-      "contact_position": "Warehouse Manager",
-      "contact_phone": "+1 (646) 123-1234",
-      "contact_email": "paujla@instock.com"
-    },
-    {
-      "id": 2,
-      "warehouse_name": "Washington",
-      "address": "33 Pearl Street SW",
-      "city": "Washington",
-      "country": "USA",
-      "contact_name": "Greame Lyon",
-      "contact_position": "Warehouse Manager",
-      "contact_phone": "+1 (646) 123-1234",
-      "contact_email": "glyon@instock.com"
-    }
-  ];
-
   if (isLoading) <div>Loading...</div>;
   if (isErrorState) <div>There was an error fetching the data</div>;
 
   return (
     <div className="warehouse-list">
       <ul className="warehouse-list__ul">
-        {warehouseTemp &&
-          warehouseTemp.map((warehouse) => {
+        {warehouses &&
+          warehouses.map((warehouse) => {
             return (
               <li className="warehouse-list__li">
                 {
@@ -73,7 +48,7 @@ export const WarehouseList = () => {
                     contactName={warehouse.contact_name}
                     contactPhone={warehouse.contact_phone}
                     contactEmail={warehouse.contact_email}
-                    //fetchWarehouseData={fetchWarehouseData}
+                    fetchWarehouseData={fetchWarehouseData}
                   />
                 }
               </li>
