@@ -49,6 +49,7 @@ export const InventoryList = () => {
                     quantity={inventory.quantity}
                     created_at={inventory.created_at}
                     updated_at={inventory.contact_email}
+                    warehouse_id={inventory.warehouse_id}
                     fetchinventoryData={fetchinventoryData}
                   />
                 }

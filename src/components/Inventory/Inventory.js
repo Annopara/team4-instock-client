@@ -13,8 +13,8 @@ export const Inventory = ({
   quantity,
   created_at, 
   updated_at, 
-  //include warehouse ID somewhere here
-  //come back and tweak this code so it pushes the right elements - you will need to go into 'Inventory' and add warehouse ID too
+  warehouse_id
+  
 }) => {
   return (
     <div className="inventory__container">
@@ -35,22 +35,27 @@ export const Inventory = ({
           <div className="inventory__category">
             <h3 className="inventory__stacked-header">category</h3>
             <p className="inventory__category-text">
-            , {category}, {status}
+            {category}
             </p>
           </div>
         </div>
       
-        <div className="inventory__wrapper">
-          <div className="inventory__contact">
-            <h3 className="inventory__stacked-header">Contact Name</h3>
-            <p className="inventory__text">{quantity}</p>
-          </div>
-          <div className="inventory__contact-info">
-            <h3 className="inventory__stacked-header">Contact Information</h3>
-            <p className="inventory__text">{created_at}</p>
-            <p className="inventory__text">{updated_at}</p>
-          </div>
-        </div>
+      <section clasName="inventory__wrapper--right">
+            <div className="inventory__wrapper--right">
+            <div className="inventory__contact">
+                <h3 className="inventory__stacked-header">Status</h3>
+                <p className="inventory__text">{status}</p>
+            </div>
+            <div className="inventory__contact">
+                <h3 className="inventory__stacked-header">qty</h3>
+                <p className="inventory__text">{quantity}</p>
+            </div>
+            <div className="inventory__contact-info">
+                <h3 className="inventory__stacked-header">Warehouse</h3>
+                <p className="inventory__text">{warehouse_id}</p>
+            </div>
+            </div>
+      </section>
       </div>
 
       <div className="inventory__actions">
