@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Chevron from "../../assets/icons/chevron_right-24px.svg";
 import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
+import { DeleteWarehouse } from "../DeleteWarehouse/DeleteWarehouse";
 
 export const Warehouse = ({
   id,
@@ -15,49 +16,52 @@ export const Warehouse = ({
   contactEmail,
 }) => {
   return (
-    <div className="warehouse__container">
-      <div className="warehouse__flex">
-        <div className="warehouse__wrapper">
-          <div className="warehouse__name">
-            <h3 className="warehouse__stacked-header">Warehouse</h3>
-            <div className="warehouse__name-link">
-              <Link to={`/warehouses/${id}`} className="warehouse__name-link-anchor">
-                {name}
-              </Link>
-              <img
-                className="warehouse__name-link-image"
-                src={Chevron}
-                alt="chevron"/>
+    <>
+      <div className="warehouse__container">
+        <div className="warehouse__flex">
+          <div className="warehouse__wrapper">
+            <div className="warehouse__name">
+              <h3 className="warehouse__stacked-header">Warehouse</h3>
+              <div className="warehouse__name-link">
+                <Link
+                  to={`/warehouses/${id}`}
+                  className="warehouse__name-link-anchor">
+                  {name}
+                </Link>
+                <img
+                  className="warehouse__name-link-image"
+                  src={Chevron}
+                  alt="chevron"
+                />
+              </div>
+            </div>
+            <div className="warehouse__address">
+              <h3 className="warehouse__stacked-header">Address</h3>
+              <p className="warehouse__address-text">
+                {address}, {city}, {country}
+              </p>
             </div>
           </div>
-          <div className="warehouse__address">
-            <h3 className="warehouse__stacked-header">Address</h3>
-            <p className="warehouse__address-text">
-              {address}, {city}, {country}
-            </p>
+          <div className="warehouse__wrapper">
+            <div className="warehouse__contact">
+              <h3 className="warehouse__stacked-header">Contact Name</h3>
+              <p className="warehouse__text">{contactName}</p>
+            </div>
+            <div className="warehouse__contact-info">
+              <h3 className="warehouse__stacked-header">Contact Information</h3>
+              <p className="warehouse__text">{contactPhone}</p>
+              <p className="warehouse__text">{contactEmail}</p>
+            </div>
           </div>
         </div>
-        <div className="warehouse__wrapper">
-          <div className="warehouse__contact">
-            <h3 className="warehouse__stacked-header">Contact Name</h3>
-            <p className="warehouse__text">{contactName}</p>
-          </div>
-          <div className="warehouse__contact-info">
-            <h3 className="warehouse__stacked-header">Contact Information</h3>
-            <p className="warehouse__text">{contactPhone}</p>
-            <p className="warehouse__text">{contactEmail}</p>
-          </div>
-        </div>
-      </div>
 
-      <div className="warehouse__actions">
-        <Link to="/" className="warehouse__link">
-          <img src={DeleteIcon} alt="delete icon" className="warehouse__icon" />
-        </Link>
-        <Link to={`/warehouses/${id}/edit`} className="warehouse__link">
-          <img src={EditIcon} alt="edit icon" className="warehouse__icon" />
-        </Link>
+        <div className="warehouse__actions">
+          <DeleteWarehouse key={id} id={id} name={name} />
+          <Link to={`/warehouses/${id}/edit`} className="warehouse__link">
+            <img src={EditIcon} alt="edit icon" className="warehouse__icon" />
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
