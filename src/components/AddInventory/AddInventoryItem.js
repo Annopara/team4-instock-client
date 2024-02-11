@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
-import './AddInventory.scss';
+import './AddInventoryItem.scss';
 import errorIcon from '../../assets/icons/error-24px.svg';
 import arrowBack from '../../assets/icons/arrow_back-24px.svg';
 
