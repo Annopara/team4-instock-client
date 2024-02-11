@@ -10,4 +10,4 @@ export const AddInventoryItemPage = () => {
   );
 };
 
-export default AddInventoryItemPage;
+// export default AddInventoryItemPage;

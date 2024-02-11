@@ -144,3 +144,4 @@ const getItemDetails = async() => {
         </>
       );
     }
+    export default InventoryDetails;

@@ -1,13 +1,14 @@
-@import '../../styles/partials/globals.scss';
-@import '../../styles/partials/variables.scss';
-@import '../../styles/partials/mixins.scss';
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/globals.scss" as *;
 
 .addInventory{
     display:flex;
     flex-direction:column;
     width:876px;
     width: auto;
-    background: $primaryLight;
+    background: $white;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
     border-radius: 3px;
     position: absolute;
@@ -17,22 +18,22 @@
     width: stretch;
     top: 140px;
     margin: 0 17px 300px 17px;
-    @include medium{
+    @include tablet{
 
     }
     &__heading{
         display:flex;
         flex-direction: row;
         padding:5%;
-        border-bottom: 1px solid $secondaryLight;
-        @include medium{
+        border-bottom: 1px solid $cloud;
+        @include tablet{
             align-content: center;
         }
             &-arrow{
                 display:flex;
                 align-self: flex-start;
                 padding-top:4%;
-                @include medium{
+                @include tablet{
                     padding-top:0;
                 }
             }
@@ -49,21 +50,21 @@
 .item-form{
     display:flex;
     flex-direction: column;
-    @include medium{
+    @include tablet{
         flex-direction:column;
     }
-    @include large{
+    @include desktop{
         flex-direction:column;
     }
     &__container{
-        @include medium{
+        @include tablet{
         display:flex;
         flex-direction:row;
     }
-    @include large{
+    @include desktop{
         flex-direction:column;
     }
-    @include medium{
+    @include tablet{
         display:flex;
         flex-direction:row;
     }
@@ -71,7 +72,7 @@
     &__details{
         display:flex;
         flex-direction:column;
-        @include medium{
+        @include tablet{
             width:50%;
         }
 
@@ -79,7 +80,7 @@
     &__availability{
         display:flex;
         flex-direction:column;
-        @include medium{
+        @include tablet{
             width:50%;
         }
     }
@@ -91,7 +92,7 @@
         font-size: 0.81rem;
         font-weight:600;
         margin:2% 0 2% 5%;
-        @include medium{
+        @include tablet{
             margin-top:7%;
         }
     }
@@ -103,8 +104,8 @@
         width:85%;
         max-width:85%;
         margin:auto;
-        border: 1px solid $secondaryLight;
-        @include medium{
+        border: 1px solid $cloud;
+        @include tablet{
             margin-top:0;
             margin-bottom:0;
         }
@@ -117,7 +118,7 @@
         width:85%;
         max-width:85%;
         margin:auto;
-        border: 0.5px solid $secondaryLight;
+        border: 0.5px solid $cloud;
         resize:none;
     }
     &__dropdown{
@@ -127,17 +128,17 @@
         width:90%;
         max-width:90%;
         margin:auto;
-        border: 0.5px solid $secondaryLight;
-        @include medium{
+        border: 0.5px solid $cloud;
+        @include tablet{
             margin-top:0;
             margin-bottom:0;
         }
     }
     &__line{
-        border:.5px solid $secondaryLight;
+        border:.5px solid $cloud;
         margin: 7% 0 0 0;
-        @include medium{
-            border-right: 1px solid $secondaryLight;
+        @include tablet{
+            border-right: 1px solid $cloud;
             position: absolute;
             top: 14.5%;
             left: 50%;
@@ -154,9 +155,9 @@
             flex-direction:row;
             justify-content: left;
             width:50%;
-            @include medium{
+            @include tablet{
                 width:40%;
-                @include large{
+                @include desktop{
                     width:20%;
                 }
             }
@@ -179,7 +180,7 @@
     &-text{
         margin-left:2%;
         font-size:0.81rem;
-        color:$outOfStock;
+        color:$red;
     }
 }
     &__button{
@@ -187,29 +188,29 @@
         justify-content: space-between;
         align-items: center;
         height:68px;
-        background-color:$backgroundLight;
+        background-color:$light-grey;
         padding-left:5%;
         padding-right:5%;
         margin: 7% 0 0 0;
-        @include medium{
+        @include tablet{
             display: flex;
             justify-content:flex-end;
         }
             &-cancel{
-                background-color:$primaryLight;
-                color:$secondraryDark;
+                background-color:$white;
+                color:$instock-black;
                 height:36px;
                 max-height:36px;
                 border-radius:20px;
                 width:50%;
-                border: 1px solid $secondaryLight;
-                @include medium {
+                border: 1px solid $cloud;
+                @include tablet {
                     width:45%;
                 }
             }
             &-add{
-                background-color:$primaryMedium;
-                color:$primaryLight;
+                background-color:$light-grey;
+                color:$white;
                 height:36px;
                 max-height:36px;
                 border-radius:20px;
@@ -221,7 +222,7 @@
                 flex-direction: row;
                 justify-content: space-between;
                 width:100%;
-                @include medium{
+                @include tablet{
 
                     width:35%;
                 }
@@ -231,18 +232,18 @@
 }
 
 ::placeholder{
-    color:$secondraryDark;    
+    color:$instock-black;    
 }
 
 textarea{
-    color:$secondraryDark;
+    color:$instock-black;
     padding-left:5%;
     padding-top:2%;
     
 }
 
 select{
-    color:$secondraryDark;
+    color:$instock-black;
     padding-left:5%;
     appearance: none;
     background-image:url(../../assets/icons/arrow_drop_down-24px.svg);
@@ -251,11 +252,11 @@ select{
 }
 
 option{
-    color:$secondraryDark;
+    color:$instock-black;
     padding-left:5%;
 }
 
 input{
-    color:$secondraryDark;
+    color:$instock-black;
     padding-left:5%;
 }
