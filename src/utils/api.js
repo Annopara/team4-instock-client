@@ -1,14 +1,13 @@
-export const API_URL = "http://localhost:8080";
+const API_URL = process.env.REACT_APP_API;
 
 // ALL WAREHOUSES
 export const getWarehousesEndpoint = `${API_URL}/api/warehouses`;
-console.log(getWarehousesEndpoint)
 export const postWarehouseEndpoint = getWarehousesEndpoint;
 
 // SINGLE WAREHOUSE
 export const getWarehouseEndpoint = (id) => `${API_URL}/api/warehouses/${id}`;
 export const patchWarehouseEndpoint = getWarehouseEndpoint;
-export const deleteWarehouseEndpoint = getWarehouseEndpoint;
+//export const deleteWarehouseEndpoint = getWarehouseEndpoint;
 
 // ALL INVENTORY
 export const getInventoryEndpoint = `${API_URL}/api/inventory`;

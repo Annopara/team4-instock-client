@@ -3,7 +3,6 @@ import "./WarehousesHeadings.scss";
 
 export const WarehousesHeadings = () => {
 
-    const sortIcon = <img src={SortIcon} alt="sort icon" className="warehouse-headings__icon" />
   return (
     <div className="headings">
       <div className="heading__group">

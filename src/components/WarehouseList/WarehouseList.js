@@ -11,7 +11,7 @@ export const WarehouseList = ({warehouses}) => {
         {warehouses &&
           warehouses.map((warehouse) => {
             return (
-              <li className="warehouse-list__li">
+              <li className="warehouse-list__li" key={warehouse.id}>
                 {
                   <Warehouse
                     id={warehouse.id}

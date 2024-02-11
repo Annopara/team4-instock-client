@@ -2,7 +2,6 @@ import "./AllWarehousesPage.scss";
 import { WarehousesHeadings } from "../../components/WarehousesHeadings/WarehousesHeadings";
 import { SearchHeader } from "../../components/SearchHeader/SearchHeader";
 import { WarehouseList } from "../../components/WarehouseList/WarehouseList";
-import { DeleteWarehouse } from "../../components/DeleteWarehouse/DeleteWarehouse";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { getWarehousesEndpoint } from "../../utils/api";
@@ -34,13 +33,6 @@ export const AllWarehousesPage = () => {
   if (!isLoading && !isError && warehouses) {
     return (
       <section className="warehouses">
-        <div className="warehouses__delete-container">
-        <DeleteWarehouse
-          fetchWarehouseData={fetchWarehouseData}
-          warehouses={warehouses}
-          setWarehouses={setWarehouses}
-        />
-        </div>
         <SearchHeader
           title="Warehouses"
           btnText="+ Add New Warehouse"

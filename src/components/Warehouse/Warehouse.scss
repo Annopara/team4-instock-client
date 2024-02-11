@@ -70,7 +70,6 @@
 
   &__name-link {
     display: flex;
-    justify-content: center;
     align-items: center;
 
     &-anchor {
@@ -175,7 +174,10 @@
     }
 
     &:first-child {
-      margin-right: 0.5rem;
+
+      @include tablet {
+        margin-right: 0.5rem;
+      }
     }
   }
 
