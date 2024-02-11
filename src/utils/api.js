@@ -10,8 +10,8 @@ export const patchWarehouseEndpoint = getWarehouseEndpoint;
 //export const deleteWarehouseEndpoint = getWarehouseEndpoint;
 
 // ALL INVENTORY
-export const getInventoryEndpoint = `${API_URL}/api/inventory`;
-export const postInventoryEndpoint = getInventoryEndpoint;
+export const getInventoriesEndpoint = `${API_URL}/api/inventories`;
+export const postInventoryEndpoint =getInventoriesEndpoint;
 
 // SINGLE WAREHOUSE STOCK OF A SINGLE INVENTORY ITEM
 export const getInventoryItemEndpoint = (id) =>

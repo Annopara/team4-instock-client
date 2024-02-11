@@ -3,13 +3,15 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import backIcon from '../../assets/icons/arrow_back-24px.svg'; 
 
-function InventoryDetails() {
+
+export const InventoryDetails =() =>{
     const { id } = useParams();
     const [itemDetails, setItemDetails] = useState([]);
     const [warehouseName, setWarehouseName] = useState("");
 
-const getItemDetails = () => {
+const getItemDetails = async() => {
     try {
         const res = await axios.get(`http://localhost:8080/inventories/${id}`);
         setItemDetails(res.data.inventoriesData[0]);
@@ -18,7 +20,7 @@ const getItemDetails = () => {
     }
     };
 
-    const getWarehouseName = () => {
+    const getWarehouseName = async () => {
         try {
             const res = await axios.get(`http://localhost:8080/warehouses/${warehouse_id}`);
             setWarehouseName(res.data.warehouseData[0].warehouse_name);
@@ -142,3 +144,4 @@ const getItemDetails = () => {
         </>
       );
     }
+    export default InventoryDetails;
