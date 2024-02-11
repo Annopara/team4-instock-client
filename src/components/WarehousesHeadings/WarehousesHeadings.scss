@@ -21,6 +21,10 @@
         display: flex;
         flex-direction: row;
         width: 20%;
+
+        &:nth-child(3) {
+            padding-left:2rem;
+        }
     }
 
     &__title {
