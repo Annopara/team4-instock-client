@@ -2,3 +2,15 @@
 @use "../../styles/partials/mixins.scss" as *;
 @use "../../styles/partials/typography.scss" as *;
 @use "../../styles/partials/globals.scss" as *;
+
+.warehouses {
+  &__delete-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+}

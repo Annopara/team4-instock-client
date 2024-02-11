@@ -1,35 +1,9 @@
 import "./WarehouseList.scss";
 
 import { Warehouse } from "../Warehouse/Warehouse";
-import { getWarehousesEndpoint } from "../../utils/api";
-import axios from "axios";
-import { useEffect, useState } from "react";
 
-export const WarehouseList = () => {
-  const [warehouses, setWarehouses] = useState([]);
-
-  const [isLoading, setIsLoading] = useState(true);
-  const [isErrorState, setIsErrorState] = useState(false);
-
-  const fetchWarehouseData = async () => {
-    try {
-      console.log(getWarehousesEndpoint);
-      const response = await axios.get(getWarehousesEndpoint);
-      setIsLoading(false);
-      setWarehouses(response.data);
-    } catch (error) {
-      setIsLoading(false);
-      setIsErrorState(true);
-      console.error("Error fetching data: ", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchWarehouseData();
-  }, []);
-
-  if (isLoading) <div>Loading...</div>;
-  if (isErrorState) <div>There was an error fetching the data</div>;
+export const WarehouseList = ({warehouses}) => {
+ 
 
   return (
     <div className="warehouse-list">
@@ -48,7 +22,6 @@ export const WarehouseList = () => {
                     contactName={warehouse.contact_name}
                     contactPhone={warehouse.contact_phone}
                     contactEmail={warehouse.contact_email}
-                    fetchWarehouseData={fetchWarehouseData}
                   />
                 }
               </li>

@@ -14,7 +14,10 @@ export const Warehouse = ({
   contactPhone,
   contactEmail,
 }) => {
+
+  
   return (
+    <>
     <div className="warehouse__container">
       <div className="warehouse__flex">
         <div className="warehouse__wrapper">
@@ -59,5 +62,6 @@ export const Warehouse = ({
         </Link>
       </div>
     </div>
+    </>
   );
 };
