@@ -2,6 +2,7 @@ export const API_URL = "http://localhost:8080";
 
 // ALL WAREHOUSES
 export const getWarehousesEndpoint = `${API_URL}/api/warehouses`;
+console.log(getWarehousesEndpoint)
 export const postWarehouseEndpoint = getWarehousesEndpoint;
 
 // SINGLE WAREHOUSE
