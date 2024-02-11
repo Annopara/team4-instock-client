@@ -1,0 +1,139 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/globals.scss" as *;
+
+.form {
+  border-top: 1px solid $cloud;
+  margin: 0;
+
+  &__all-forms {
+    padding: 1rem 1.5rem;
+    @include tablet {
+      display: flex;
+      padding: 1rem 1.5rem 0 1.5rem;
+    }
+  }
+
+  &__fieldset {
+    border: 0;
+    padding: 0;
+    @include tablet {
+      width: 50%;
+      padding: 0 1.5rem;
+    }
+
+    &--divider {
+      border-bottom: 1px solid $cloud;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      @include tablet {
+        border-bottom: none;
+        border-right: 1px solid $cloud;
+        padding: 0 1.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  &__label {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  &__h2 {
+    font-weight: 600;
+    @include tablet {
+      padding: 0.5rem 0;
+    }
+  }
+
+  &__section {
+    margin: 0.5rem 0;
+
+    @include tablet {
+      margin: 0.5rem 0;
+    }
+  }
+
+  &__input {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.6rem;
+    width: 100%;
+    border: 1px solid $cloud;
+    border-radius: 20px;
+
+    &::placeholder {
+      font-size: 14px;
+    }
+    &:focus {
+      border-color: $instock-indigo;
+    }
+
+    &:invalid {
+      border-color: $red;
+    }
+  }
+
+  &__btn {
+    padding: 1rem;
+    background-color: $light-grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0px, 0px, 3px, 3px;
+    @include tablet {
+      justify-content: flex-end;
+      padding: 1rem 58px;
+    }
+  }
+
+  &__cancel {
+    background-color: $white;
+    border: 1px solid $cloud;
+    text-align: center;
+    font-weight: 700;
+    @include tablet {
+      margin: 0 1rem;
+    }
+
+    &:hover {
+      background-color: $graphite;
+      color: $white;
+    }
+  }
+
+  &__submit {
+    background-color: $instock-indigo;
+    color: #fff;
+    border: none;
+
+    &:hover {
+      background-color: $graphite;
+      color: $white;
+    }
+  }
+}
+
+.btn {
+  border-radius: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  padding: 1rem 5rem;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  @media (min-width: 768px) {
+    padding: 0.5rem 1.3rem;
+  }
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    outline: 0;
+  }
+}

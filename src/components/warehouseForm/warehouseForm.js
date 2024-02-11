@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import "./WarehouseForm.scss";
+import "./warehouseForm.scss";
 
 const WarehouseForm = ({
   currentFormInfo,
@@ -37,13 +37,13 @@ const WarehouseForm = ({
   };
 
   return (
-    <form id='form' onSubmit={formSubmit} className='newWarehouse__form'>
-      <section className='newWarehouse__all-forms'>
-        <fieldset className='newWarehouse__fieldset newWarehouse__fieldset--divider'>
-          <h3 className='newWarehouse__h3'>Warehouse Details</h3>
+    <form id='form' onSubmit={formSubmit} className='form'>
+      <section className='form__all-forms'>
+        <fieldset className='form__fieldset form__fieldset--divider'>
+          <h2 className='form__h2'>Warehouse Details</h2>
           {/* Warehouse Name */}
-          <section className='newWarehouse__section'>
-            <label htmlFor='wName' className='newWarehouse__label'>
+          <section className='form__section'>
+            <label htmlFor='wName' className='form__label'>
               Warehouse Name
             </label>
             <input
@@ -51,15 +51,15 @@ const WarehouseForm = ({
               id='wName'
               name='warehouse_name'
               placeholder='Warehouse Name'
-              className='newWarehouse__input'
+              className='form__input'
               onChange={inputChange}
               value={formInfo.warehouse_name}
             />
           </section>
 
           {/* Street Address */}
-          <section className='newWarehouse__section'>
-            <label htmlFor='sAddress' className='newWarehouse__label'>
+          <section className='form__section'>
+            <label htmlFor='sAddress' className='form__label'>
               Street Address
             </label>
             <input
@@ -67,15 +67,15 @@ const WarehouseForm = ({
               id='sAddress'
               name='address'
               placeholder='Street Address'
-              className='newWarehouse__input'
+              className='form__input'
               onChange={inputChange}
               value={formInfo.address}
             />
           </section>
 
           {/* City */}
-          <section className='newWarehouse__section'>
-            <label htmlFor='city' className='newWarehouse__label'>
+          <section className='form__section'>
+            <label htmlFor='city' className='form__label'>
               City
             </label>
             <input
@@ -83,15 +83,15 @@ const WarehouseForm = ({
               id='city'
               name='city'
               placeholder='City'
-              className='newWarehouse__input'
+              className='form__input'
               onChange={inputChange}
               value={formInfo.city}
             />
           </section>
 
           {/* Country */}
-          <section className='newWarehouse__section'>
-            <label htmlFor='country' className='newWarehouse__label'>
+          <section className='form__section'>
+            <label htmlFor='country' className='form__label'>
               Country
             </label>
             <input
@@ -99,7 +99,7 @@ const WarehouseForm = ({
               id='country'
               name='country'
               placeholder='Country'
-              className='newWarehouse__input'
+              className='form__input'
               onChange={inputChange}
               value={formInfo.country}
             />
@@ -108,11 +108,11 @@ const WarehouseForm = ({
 
         {/*   SECOND FIELDSET */}
 
-        <fieldset className='newWarehouse__fieldset'>
-          <h3 className='newWarehouse__h3'>Contact Details</h3>
+        <fieldset className='form__fieldset'>
+          <h2 className='form__h2'>Contact Details</h2>
           {/* Contact Name */}
-          <section className='newWarehouse__section'>
-            <label htmlFor='cName' className='newWarehouse__label'>
+          <section className='form__section'>
+            <label htmlFor='cName' className='form__label'>
               Contact Name
             </label>
             <input
@@ -120,15 +120,15 @@ const WarehouseForm = ({
               id='cName'
               name='contact_name'
               placeholder='Contact Name'
-              className='newWarehouse__input'
+              className='form__input'
               onChange={inputChange}
               value={formInfo.contact_name}
             />
           </section>
 
           {/* Position */}
-          <section className='newWarehouse__section'>
-            <label htmlFor='position' className='newWarehouse__label'>
+          <section className='form__section'>
+            <label htmlFor='position' className='form__label'>
               Position
             </label>
             <input
@@ -136,15 +136,15 @@ const WarehouseForm = ({
               id='position'
               name='contact_position'
               placeholder='Position'
-              className='newWarehouse__input'
+              className='form__input'
               onChange={inputChange}
               value={formInfo.contact_position}
             />
           </section>
 
           {/* Phone Number */}
-          <section className='newWarehouse__section'>
-            <label htmlFor='pNumber' className='newWarehouse__label'>
+          <section className='form__section'>
+            <label htmlFor='pNumber' className='form__label'>
               Phone Number
             </label>
             <input
@@ -152,15 +152,15 @@ const WarehouseForm = ({
               id='pNumber'
               name='contact_phone'
               placeholder='Phone Number'
-              className='newWarehouse__input'
+              className='form__input'
               onChange={inputChange}
               value={formInfo.contact_phone}
             />
           </section>
 
           {/* Email */}
-          <section className='newWarehouse__section'>
-            <label htmlFor='email' className='newWarehouse__label'>
+          <section className='form__section'>
+            <label htmlFor='email' className='form__label'>
               Email
             </label>
             <input
@@ -168,22 +168,18 @@ const WarehouseForm = ({
               id='email'
               name='contact_email'
               placeholder='Email'
-              className='newWarehouse__input'
+              className='form__input'
               onChange={inputChange}
               value={formInfo.contact_email}
             />
           </section>
         </fieldset>
       </section>
-      <section className='newWarehouse__btn'>
-        <button
-          type='button'
-          className='newWarehouse__cancel btn'
-          onClick={CancelBtn}
-        >
+      <section className='form__btn'>
+        <button type='button' className='form__cancel btn' onClick={CancelBtn}>
           Cancel
         </button>
-        <button type='submit' className='newWarehouse__submit btn'>
+        <button type='submit' className='form__submit btn'>
           {submitBtnText}
         </button>
       </section>

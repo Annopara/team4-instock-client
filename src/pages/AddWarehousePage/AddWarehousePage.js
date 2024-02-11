@@ -6,6 +6,8 @@ import {
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import WarehouseForm from "../../components/warehouseForm/warehouseForm";
+import arrowIcon from "../../assets/icons/arrow_back-24px.svg";
+import { Link } from "react-router-dom";
 // remember to import as {} since it's not the default export
 
 const { REACT_APP_API_URL } = process.env;
@@ -55,7 +57,7 @@ export const AddWarehousePage = () => {
       try {
         // Send POST request to add warehouse
         const response = await axios.post(
-          `${REACT_APP_API_URL}/warehouse`,
+          `${REACT_APP_API_URL}/api/warehouses`,
           formInfo
         );
 
@@ -73,8 +75,16 @@ export const AddWarehousePage = () => {
   };
 
   return (
-    <section>
-      <h2 className='newWarehouse__h2'>+ Add New Warehouse</h2>
+    <section className='newWarehouse'>
+      {/* PageHeader */}
+      <section className='newWarehouse__section'>
+        <Link to='/warehouses'>
+          <img src={arrowIcon} alt='backarrow' className='newWarehouse__icon' />
+        </Link>
+
+        <h1 className='newWarehouse__h1'> Add New Warehouse</h1>
+      </section>
+      {/* Form */}
       <WarehouseForm
         currentFormInfo={{
           warehouse_name: "",
