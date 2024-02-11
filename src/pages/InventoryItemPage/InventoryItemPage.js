@@ -1,7 +1,13 @@
 import './InventoryItemPage.scss';
-// remember to import as {} since it's not the default export
+import InventoryItemComponent from '../../components/InventoryDetails/InventoryDetails';
+
 export const InventoryItemPage = () => {
   return (
-    <div>InventoryItemPage</div>
-  )
-}
+    <section className="inventory-item-section">
+      <InventoryItemComponent />
+    </section>
+  );
+};
+
+
+export default InventoryItemPage;
