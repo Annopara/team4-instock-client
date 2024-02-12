@@ -1,0 +1,35 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/globals.scss" as *;
+
+.warehouse-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  @include tablet {
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
+
+  &__ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__li {
+    list-style: none;
+    border-bottom: 1px solid $cloud;
+    
+
+    &:hover {
+      background-color: rgba($instock-indigo, 0.07);
+
+      
+    }
+  }
+}

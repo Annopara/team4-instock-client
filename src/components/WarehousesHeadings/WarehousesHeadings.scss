@@ -1,0 +1,66 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/globals.scss" as *;
+.headings {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: $light-grey;
+  }
+}
+
+.heading {
+  &__group {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+
+    &:nth-child(3) {
+      padding-left: 2rem;
+    }
+  }
+
+  &__title {
+    color: $slate;
+    font-size: 0.65rem;
+    align-content: center;
+    padding-top: 0.25rem;
+    font-weight: 600;
+    margin-right: 4px;
+
+    @include desktop {
+      font-size: 0.75rem;
+    }
+
+    &--actions {
+      display: flex;
+      justify-content: flex-end;
+      width: 10%;
+      margin-right: 0;
+      color: $slate;
+      font-size: 0.65rem;
+      align-content: center;
+      padding-top: 0.25rem;
+      font-weight: 600;
+
+      @include desktop {
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  &__icon {
+    width: 1.1rem;
+    cursor: pointer;
+
+    @include desktop {
+      width: 1.5rem;
+    }
+  }
+}

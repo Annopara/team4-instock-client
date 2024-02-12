@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# BrainStation InStock Team 4 Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An agile team project created as part of BrainStation's fullstack software development program.
+The Server side files may be found here: 
 
-## Available Scripts
+### ReactJS Client Side Library
 
-In the project directory, you can run:
+React.js is a JavaScript library for building user interfaces, particularly single-page applications (SPAs) where UI updates are frequent. It has been chosen for its component-based architecture and reusable UI component philosophy.
 
-### `npm start`
+## How to Run the Application at localhost:3000
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Make sure you have [Node.js](https://nodejs.org/), and npm (Node Package Manager) installed on your machine.
 
-### `npm test`
+### Steps
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the Repository:
 
-### `npm run build`
+```bash
+git clone https://github.com/gillian-trethewey/gillian-trethewey-hounddogai.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the Project Directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd gillian-trethwey-hounddogai
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install Dependencies:
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Run the Development Server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run dev
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This command will start the development server at `localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Access the Application:
+    Open your web browser and navigate to https://localhost:3000.
 
-## Learn More
+### Additional Commands
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Build for Production:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run build
+```
 
-### Code Splitting
+2. Start the Production Server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm start
+```
 
-### Analyzing the Bundle Size
+## Team 4 Participants
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Libbie Farrell
 
-### Making a Progressive Web App
+GitHub: libbieiscool
+LinkedIn: libbie-farrell-698994287
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Gillian Trethewey
 
-### Advanced Configuration
+GitHub: GillianTrethewey
+LinkedIn: GillianTrethewey
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Ann Opara
 
-### Deployment
+GitHub: annopara  
+LinkedIn: ann-opara
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Asia Mohamed
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GitHub: mohamasia
+LinkedIn: asia-mohamed

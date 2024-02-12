@@ -1,0 +1,238 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/globals.scss" as *;
+
+.inventory {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid $cloud;
+  height: 4.75rem;
+
+  &:hover {
+    background-color: rgba(46, 102, 230, 0.07);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      min-height: 4.75rem;
+      align-items: center;
+      padding: 0;
+      width: 95%;
+    }
+    // @include desktop{
+    //   justify-content: ;
+    // }
+
+  }
+
+  &__flex {
+    display: flex;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    @include tablet {
+      width: 100%;
+      margin-bottom: 0;
+    }
+    // @include desktop{
+    //   width:50%;
+    // }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+      width: 40vw;
+    }
+    @include desktop{
+    }
+
+    &--right{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      width:100%;
+
+      @include tablet{
+        width: 55vw;
+      }
+
+      @include desktop{
+        width: 44vw; 
+      }
+    }
+  }
+
+  &__stacked-header {
+    width: 100%;
+    color: $slate;
+    text-transform: uppercase;
+    margin: 0.5rem 0;
+    text-align: left;
+    font-weight: 600;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__name-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &-anchor {
+      color: $instock-indigo;
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-right: 4px;
+    }
+
+    &-image {
+      width: 1.5rem;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    font-size: 0.8125rem;
+
+    @include tablet {
+      width: 50%; 
+    }
+
+    @include desktop{
+      // width: 50%;
+
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      width: 50%;
+      flex-direction: row;
+      margin-bottom: 0;
+    }
+  }
+
+  &__address {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &-text {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+
+      @include tablet {
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 0;
+    }
+
+    &-info {
+      width: 100%;
+
+      @include tablet {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include tablet {
+      justify-content: flex-end;
+      width: 11%;
+    }
+  }
+
+  &__icon {
+    width: 1.5rem;
+
+    @include tablet {
+      width: 1.5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__name,
+  &__address,
+  &__contact,
+  &__contact-info, 
+  &__category {
+    display: flex;
+    font-size: 0.6875rem;
+    font-weight: 400;
+
+    @include tablet {
+      font-size: 0.875rem;
+      justify-content: flex-start;
+    }
+    @include desktop{
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+}

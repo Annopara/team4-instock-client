@@ -1,0 +1,375 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/globals.scss" as *;
+
+.inventory-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  @include tablet {
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
+
+  &__ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__li {
+    list-style: none;
+    border-bottom: 1px solid $cloud;
+    
+
+    &:hover {
+      background-color: rgba($instock-indigo, 0.07);
+
+      
+    }
+  }
+}
+
+
+
+
+// @use "../../styles/partials/variables.scss" as *;
+// @use "../../styles/partials/mixins.scss" as *;
+// @use "../../styles/partials/typography.scss" as *;
+// @use "../../styles/partials/globals.scss" as *;
+
+// .inventoryList {
+//   position: absolute;
+//   top: 8.75rem; 
+//   background: $white;
+//   border-radius: 0.25rem; 
+//   box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1); 
+//   width: stretch;
+//   margin: 0 1.0625rem; 
+//   @include tablet {
+//     margin: 0 4% 6.25rem 4%; 
+//     top: 5.9375rem; 
+//   }
+//   @include desktop {
+//     margin: 0 10% 9.375rem 10%; 
+//   }
+//   &__main {
+//     padding: 0.9375rem 0; 
+//     border-bottom: 0.0625rem solid $cloud; 
+//     @include tablet {
+//       display: flex;
+//       justify-content: space-between;
+//     }
+//     &:hover {
+//       background-color: $instock-indigo;
+//     }
+//   }
+//   &__header {
+//     @include tablet {
+//       display: flex;
+//       justify-content: space-between;
+//       width: 100%;
+//       padding: 0.9375rem 4%; 
+//     }
+//   }
+//   &__title {
+//     color: $instock-black;
+//     font-weight: 600;
+//     margin: 0.75rem 0; 
+//     @include tablet{
+//       margin: 0.625rem 0 0 0; 
+//     }
+//   }
+//   &__form-container {
+//     width: stretch;
+//     @include tablet {
+//       padding-top: 0.375rem; 
+//       width: 53%;
+//     }
+//     @include desktop {
+//       width: 44%;
+//     }
+//   }
+//   &__form {
+//     display: flex;
+//     flex-direction: column;
+//     padding: 0.9375rem 7%; 
+//     margin: 0;
+//     @include tablet {
+//       flex-direction: row;
+//       justify-content: space-between;
+//       padding: 0.9375rem 4%; 
+//       margin: 0;
+//     }
+//   }
+//   &__form-sub {
+//     padding-bottom: 0.3125rem; 
+//     @include tablet {
+//       display: flex;
+//       height: 2.375rem; 
+//       margin-top: 0.625rem; 
+//     }
+//   }
+//   &__search {
+//     background-image: url("../../assets/icons/search-24px.svg");
+//     background-repeat: no-repeat;
+//     background-position: 94%;
+//     width: stretch;
+//     border-radius: 1.25rem; 
+//     padding: 0.4375rem 1rem; 
+//     border: 0.0625rem solid $cloud; 
+//     margin-bottom: 0.9375rem; 
+
+//     &:focus {
+//       outline: none;
+//       border: 0.0625rem solid $instock-indigo; 
+//     }
+
+//     @include tablet {
+//       margin: 0 0.9375rem 0 0; 
+//     }
+//   }
+//   &__button {
+//     background-color: $instock-indigo;
+//     color: $white;
+//     width: stretch;
+//     border-radius: 1.25rem; 
+//     border: none;
+//     padding: 0 1rem; 
+//     margin-bottom: 0.3125rem; 
+//     height: 2.25rem; 
+//     @include tablet {
+//       height: 2.375rem; 
+//       width: 8.125rem; 
+//     }
+
+//     &:hover {
+//       background-color: $instock-black;
+//     }
+//   }
+//   &__list-divider {
+//     border-bottom: 0.0625rem solid $cloud; 
+//     @include tablet {
+//       display: none;
+//     }
+//   }
+//   &__category-box {
+//     background-color: $light-grey;
+//     width: 100%;
+//   }
+//   &__categories {
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 0.625rem 0; 
+//     @include tablet {
+//       display: flex;
+//       justify-content: space-between;
+//       height: 2.5rem; 
+//       background-color: $light-grey;
+//       margin: 0 4%;
+//     }
+//   }
+  
+//   &__category-title {
+//     flex: 1;
+//     text-align: center;
+//     @include tablet {
+//       font-weight: 600;
+//       color: $slate;
+//       margin: 0.5rem 0; 
+//       display: flex;
+//       align-items: center;
+//     }
+//   }
+//   &__parent-section {
+//     display: flex;
+//     flex-wrap: wrap;
+//     flex-direction: column;
+//     height: 10.625rem; 
+//     padding: 0 6.5% 0.3125rem 6.5%; 
+//     @include tablet {
+//       flex-direction: row;
+//       align-items: center;
+//       height: auto;
+//       width: 100%;
+//       padding: 0 4%;
+//       justify-content: space-between;
+//     }
+//   }
+//   &__text {
+//     color: $slate;
+//     @include tablet {
+//       width: 5.625rem; 
+//     }
+//   }
+//   &__item-container {
+//     display: flex;
+//     flex-direction: column;
+//   }
+//   &__item-heading {
+//     line-height: 1rem; 
+//     margin: 0 0 0.3125rem 0; 
+//     font-weight: 600;
+//     @include tablet {
+//       display: none;
+//     }
+//   }
+//   &__item {
+//     display: flex;
+//     height: 1.25rem; 
+//     font-weight: 600;
+//     line-height: 1.25rem; 
+//     margin: 0;
+//     color: $instock-indigo;
+//     @include tablet {
+//       width: 9.6875rem; 
+//     }
+//     &-row {
+//         display: flex;
+//         justify-content: space-between;
+//         padding: 0.625rem 0; 
+//       }
+//     &-detail{
+//     flex: 1;
+//     text-align: center;
+//   }
+//   }
+//   &__actions-detail{
+//     flex: 1;
+//     text-align: center;
+//     display: flex;
+//     justify-content: center;
+//     gap: 0.625rem; 
+//   }
+//   &__category-heading {
+//     height: 1rem; 
+//     line-height: 1rem; 
+//     margin: 1rem 0 0.3125rem 0; 
+//     font-weight: 600;
+//     @include tablet {
+//       display: none;
+//     }
+//   }
+//   &__category {
+//     line-height: 1.25rem; 
+//     margin: 0 0 2.5rem 0; 
+//     @include tablet{
+//       margin: 0;
+//       width: 6.875rem; 
+//       padding-left: 0.1875rem; 
+//     }
+//   }
+//   &__category-inventory {
+//     @include tablet {
+//       padding-right: 2.625rem; 
+//     }
+//   }
+//   &__category-status {
+//     @include tablet {
+//       padding-left: 2.1875rem; 
+//     }
+//   }
+//   &__category-quantity {
+//     @include tablet {
+//       padding-left: 3.4375rem; 
+//       width: 3.125rem; 
+//     }
+//   }
+//   &__category-warehouse {
+//     @include tablet {
+//       padding-right: 2.1875rem; 
+//     }
+//   }
+//   &__status-heading {
+//     line-height: 1rem; 
+//     margin: 1rem 0 0.3125rem 0; 
+//     @include tablet{
+//       display: none;
+//     }
+//   }
+//   &__status-container {
+//     @include tablet {
+//       width: 7.5rem; 
+//     }
+//   }
+//   &__status {
+//     line-height: 1rem; 
+//     text-transform: uppercase;
+//     font-size: 0.67rem; 
+//     margin: 0;
+//     color: $instock-black;
+//     background: rgba(21, 132, 99, 0.07);
+//     padding: 0.1875rem 0.25rem; 
+//     border-radius: 1.25rem; 
+//     @include tablet {
+//       width: 60%;
+//     }
+//   }
+//   &__quantity-heading {
+//     line-height: 1rem; 
+//     margin: 1rem 0 0.3125rem 0; 
+//     @include tablet {
+//       display: none;
+//     }
+//   }
+//   &__quantity {
+//     margin: 0;
+//     @include tablet {
+//       width: 3.125rem; 
+//       padding-right: 0.3125rem; 
+//     }
+//   }
+//   &__warehouse-heading {
+//     margin: 1rem 0 0.3125rem 0; 
+//     font-weight: 600;
+//     @include tablet {
+//       display: none;
+//     }
+//   }
+//   &__warehouse {
+//     margin: 0;
+//     @include tablet {
+//       padding-right: 0.9375rem; 
+//     }
+//   }
+//   &__action-section-hide {
+//     display: none;
+//     @include tablet {
+//       display: inline-block;
+//     }
+//   }
+//   &__action-section-hide-medium {
+//     @include tablet {
+//       display: none;
+//     }
+//   }
+//   &__action-logo-container {
+//     display: flex;
+//     justify-content: space-between;
+//     margin: 0 6.5%;
+//     padding-bottom: 0.125rem; 
+//     @include tablet {
+//       margin: 0;
+//       padding: 0;
+//     }
+//   }
+//   &__action-heading {
+//     display: none;
+//     @include tablet {
+//       display: none;
+//     }
+//   }
+//   &__delete-icon {
+//     background: none;
+//     padding-right: 0.3125rem; 
+//   }
+// }
+
+// button {
+//   border: none;
+//   background: none;
+// }
