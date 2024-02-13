@@ -7,11 +7,6 @@
   width: 100%;
   padding-right: 1rem;
   border-radius: 4px;
-
-  @include tablet {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
 }
 .popup-overlay {
   background-color: rgba($color: $instock-black, $alpha: 0.7);
@@ -95,6 +90,7 @@
 
     &:hover {
       background-color: $instock-black;
+      color: $white;
     }
   }
 
