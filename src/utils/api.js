@@ -1,4 +1,5 @@
-const API_URL = process.env.REACT_APP_API;
+// const API_URL = process.env.REACT_APP_API;
+const API_URL = process.env.REACT_APP_API_URL;
 
 // ALL WAREHOUSES
 export const getWarehousesEndpoint = `${API_URL}/api/warehouses`;
