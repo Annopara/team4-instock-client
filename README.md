@@ -1,7 +1,7 @@
 # BrainStation InStock Team 4 Client
 
 An agile team project created as part of BrainStation's fullstack software development program.
-The Server side files may be found here: 
+The Server side files may be found here: (https://github.com/Annopara/team4-instock-server)
 
 ### ReactJS Client Side Library
 
@@ -18,22 +18,16 @@ Make sure you have [Node.js](https://nodejs.org/), and npm (Node Package Manager
 1. Clone the Repository:
 
 ```bash
-git clone https://github.com/gillian-trethewey/gillian-trethewey-hounddogai.git
+(https://github.com/Annopara/team4-instock-client.git)
 ```
 
-2. Navigate to the Project Directory:
-
-```bash
-cd gillian-trethwey-hounddogai
-```
-
-3. Install Dependencies:
+2. Install Dependencies:
 
 ```bash
 npm install
 ```
 
-4. Run the Development Server:
+3. Run the Development Server:
 
 ```bash
 npm run dev
