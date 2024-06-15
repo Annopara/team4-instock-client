@@ -59,11 +59,6 @@ npm start
 GitHub: libbieiscool
 LinkedIn: libbie-farrell-698994287
 
-### Gillian Trethewey
-
-GitHub: GillianTrethewey
-LinkedIn: GillianTrethewey
-
 ### Ann Opara
 
 GitHub: annopara  
